@@ -6,7 +6,6 @@ target 'CommonCodeWatch' do
   use_frameworks!
 
   pod 'Alamofire', '~> 4.5'
-  pod 'Wrap', '2.1.1'
   
   target 'OctoPrintWatch Extension' do
       inherit! :search_paths
@@ -19,7 +18,6 @@ target 'CommonCodePhone' do
     use_frameworks!
     
     pod 'Alamofire', '~> 4.5'
-    pod 'Wrap', '2.1.1'
     
     target 'OctoPrint' do
         inherit! :search_paths
