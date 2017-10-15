@@ -20,13 +20,31 @@ public class NetworkManager {
         sessionManager = Alamofire.SessionManager(configuration: config)
     }
     
-    public func getVersionNumber(success: @escaping (OctoPrintVersion) -> Void, failure: @escaping () -> Void) {
+    public func getJobProgress(success: @escaping (OPJobStatus) -> Void, failure: @escaping () -> Void) {
+        let url = String(format:"%@/job", baseURL)
+        
+        getRequest(url: url, success: { response in
+            do {
+                if let responseValue = response {
+                    let decoder = JSONDecoder()
+                    let status = try decoder.decode(OPJobStatus.self, from: responseValue)
+                    success(status)
+                }
+            } catch {
+                failure()
+            }
+        }) { response in
+            failure()
+        }
+    }
+    
+    public func getVersionNumber(success: @escaping (OPVersion) -> Void, failure: @escaping () -> Void) {
         let url = String(format:"%@/version",baseURL)
         getRequest(url: url, success: { response in
             do {
                 if let responseValue = response {
                     let decoder = JSONDecoder()
-                    let version = try decoder.decode(OctoPrintVersion.self, from: responseValue)
+                    let version = try decoder.decode(OPVersion.self, from: responseValue)
                     success(version)
                 }
             } catch {
