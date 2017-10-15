@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1124E92EB799E76CEEF35D80 /* Pods_OctoPrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */; };
+		1C3A5B5DCBA59DA8440D7FE4 /* Pods_CommonCodeWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7CA4EA5ECC8EF35C5F89EE /* Pods_CommonCodeWatch.framework */; };
+		461A2187F6BBA10CE1B4B5E3 /* Pods_OctoPrintWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B9DE2931166285F52FF4D6 /* Pods_OctoPrintWatch_Extension.framework */; };
+		558427680BB43660F4F98EC7 /* Pods_OctoPrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */; };
+		5FAC8354DF889789A61DCA87 /* Pods_CommonCodePhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36A26618289844F07F0BE7 /* Pods_CommonCodePhone.framework */; };
+		6612A9D41F93B31B002D009A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D31F93B31B002D009A /* NetworkManager.swift */; };
+		6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D31F93B31B002D009A /* NetworkManager.swift */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
@@ -62,6 +67,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6612A9D61F93BACF002D009A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6671803F1F93A60C007587C8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -109,6 +123,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04B9DE2931166285F52FF4D6 /* Pods_OctoPrintWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OctoPrintWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36F86D595D9B1ED9A86C3A1D /* Pods-OctoPrint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.release.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.release.xcconfig"; sourceTree = "<group>"; };
+		6612A9D31F93B31B002D009A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66717FFF1F939D22007587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667180011F939D22007587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,9 +151,16 @@
 		6671806B1F93A6B5007587C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6671806D1F93A6B5007587C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6671806E1F93A6B5007587C8 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		6F4694147FECDC805A01DA65 /* Pods-OctoPrint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.release.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.release.xcconfig"; sourceTree = "<group>"; };
-		CF734E81FA38E4AF0A3E5689 /* Pods-OctoPrint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.debug.xcconfig"; sourceTree = "<group>"; };
+		765E2E9ADBDB4E0B2EBFF0CA /* Pods-OctoPrintWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrintWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrintWatch Extension/Pods-OctoPrintWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		84A30FEF6C22521D17416B2A /* Pods-CommonCodeWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonCodeWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommonCodeWatch/Pods-CommonCodeWatch.release.xcconfig"; sourceTree = "<group>"; };
+		92E36DC8E331AE380454DF04 /* Pods-OctoPrintWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrintWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrintWatch Extension/Pods-OctoPrintWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		BA36A26618289844F07F0BE7 /* Pods_CommonCodePhone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommonCodePhone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8B283A8E4362C9FF806C494 /* Pods-CommonCodeWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonCodeWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonCodeWatch/Pods-CommonCodeWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		DC7CA4EA5ECC8EF35C5F89EE /* Pods_CommonCodeWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommonCodeWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2D6177E63F50E7FB5B4E9F /* Pods-CommonCodePhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonCodePhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonCodePhone/Pods-CommonCodePhone.debug.xcconfig"; sourceTree = "<group>"; };
 		F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OctoPrint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB1D381EFB77AA6660CF6733 /* Pods-OctoPrint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.debug.xcconfig"; sourceTree = "<group>"; };
+		FF708385537B68411605ADCF /* Pods-CommonCodePhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonCodePhone.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommonCodePhone/Pods-CommonCodePhone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +168,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1124E92EB799E76CEEF35D80 /* Pods_OctoPrint.framework in Frameworks */,
 				6671803A1F93A60C007587C8 /* CommonCodePhone.framework in Frameworks */,
+				558427680BB43660F4F98EC7 /* Pods_OctoPrint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FAC8354DF889789A61DCA87 /* Pods_CommonCodePhone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3A5B5DCBA59DA8440D7FE4 /* Pods_CommonCodeWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				667180801F93A910007587C8 /* CommonCodeWatch.framework in Frameworks */,
+				461A2187F6BBA10CE1B4B5E3 /* Pods_OctoPrintWatch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,8 +211,14 @@
 		35B5C962133BB2BF78646B72 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF734E81FA38E4AF0A3E5689 /* Pods-OctoPrint.debug.xcconfig */,
-				6F4694147FECDC805A01DA65 /* Pods-OctoPrint.release.xcconfig */,
+				EF2D6177E63F50E7FB5B4E9F /* Pods-CommonCodePhone.debug.xcconfig */,
+				FF708385537B68411605ADCF /* Pods-CommonCodePhone.release.xcconfig */,
+				C8B283A8E4362C9FF806C494 /* Pods-CommonCodeWatch.debug.xcconfig */,
+				84A30FEF6C22521D17416B2A /* Pods-CommonCodeWatch.release.xcconfig */,
+				FB1D381EFB77AA6660CF6733 /* Pods-OctoPrint.debug.xcconfig */,
+				36F86D595D9B1ED9A86C3A1D /* Pods-OctoPrint.release.xcconfig */,
+				765E2E9ADBDB4E0B2EBFF0CA /* Pods-OctoPrintWatch Extension.debug.xcconfig */,
+				92E36DC8E331AE380454DF04 /* Pods-OctoPrintWatch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -194,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */,
+				04B9DE2931166285F52FF4D6 /* Pods_OctoPrintWatch_Extension.framework */,
+				BA36A26618289844F07F0BE7 /* Pods_CommonCodePhone.framework */,
+				DC7CA4EA5ECC8EF35C5F89EE /* Pods_CommonCodeWatch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,6 +278,7 @@
 			children = (
 				667180351F93A60C007587C8 /* CommonCodePhone.h */,
 				667180361F93A60C007587C8 /* Info.plist */,
+				6612A9D31F93B31B002D009A /* NetworkManager.swift */,
 			);
 			path = CommonCodePhone;
 			sourceTree = "<group>";
@@ -305,14 +342,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6671800E1F939D22007587C8 /* Build configuration list for PBXNativeTarget "OctoPrint" */;
 			buildPhases = (
-				CF6C72602F34B86319468793 /* [CP] Check Pods Manifest.lock */,
+				A8A12A9F4EFDB33EB2DD4183 /* [CP] Check Pods Manifest.lock */,
 				66717FF81F939D21007587C8 /* Sources */,
 				66717FF91F939D21007587C8 /* Frameworks */,
 				66717FFA1F939D21007587C8 /* Resources */,
-				245BA954DAD04183725ED467 /* [CP] Embed Pods Frameworks */,
-				6F9A15556588F76A6AFE48A7 /* [CP] Copy Pods Resources */,
 				6671803F1F93A60C007587C8 /* Embed Frameworks */,
 				667180791F93A6B5007587C8 /* Embed Watch Content */,
+				6612A9D61F93BACF002D009A /* CopyFiles */,
+				CA1D73C1B99866168AD4AC67 /* [CP] Embed Pods Frameworks */,
+				F845389ECE442214E9FB954B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,10 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6671803E1F93A60C007587C8 /* Build configuration list for PBXNativeTarget "CommonCodePhone" */;
 			buildPhases = (
+				838849441E9E66A545D2EA94 /* [CP] Check Pods Manifest.lock */,
 				6671802E1F93A60C007587C8 /* Sources */,
 				6671802F1F93A60C007587C8 /* Frameworks */,
 				667180301F93A60C007587C8 /* Headers */,
 				667180311F93A60C007587C8 /* Resources */,
+				FCBA494A248C7F5590C22076 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -347,10 +387,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6671804A1F93A61B007587C8 /* Build configuration list for PBXNativeTarget "CommonCodeWatch" */;
 			buildPhases = (
+				85DFB3D0E939731C1F437B86 /* [CP] Check Pods Manifest.lock */,
 				667180401F93A61B007587C8 /* Sources */,
 				667180411F93A61B007587C8 /* Frameworks */,
 				667180421F93A61B007587C8 /* Headers */,
 				667180431F93A61B007587C8 /* Resources */,
+				912FCD6B3155C822B6555BC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -383,10 +425,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 667180721F93A6B5007587C8 /* Build configuration list for PBXNativeTarget "OctoPrintWatch Extension" */;
 			buildPhases = (
+				25558389C6B72B7568E9B38E /* [CP] Check Pods Manifest.lock */,
 				6671805A1F93A6B5007587C8 /* Sources */,
 				6671805B1F93A6B5007587C8 /* Frameworks */,
 				6671805C1F93A6B5007587C8 /* Resources */,
 				667180841F93A910007587C8 /* Embed Frameworks */,
+				B0FB201F695C67A3A8A74419 /* [CP] Embed Pods Frameworks */,
+				718640D3FD5381FD683E58C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -499,27 +544,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		245BA954DAD04183725ED467 /* [CP] Embed Pods Frameworks */ = {
+		25558389C6B72B7568E9B38E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Wrap/Wrap.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wrap.framework",
+				"$(DERIVED_FILE_DIR)/Pods-OctoPrintWatch Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6F9A15556588F76A6AFE48A7 /* [CP] Copy Pods Resources */ = {
+		718640D3FD5381FD683E58C0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -531,10 +574,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrintWatch Extension/Pods-OctoPrintWatch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF6C72602F34B86319468793 /* [CP] Check Pods Manifest.lock */ = {
+		838849441E9E66A545D2EA94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CommonCodePhone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85DFB3D0E939731C1F437B86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CommonCodeWatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		912FCD6B3155C822B6555BC2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommonCodeWatch/Pods-CommonCodeWatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8A12A9F4EFDB33EB2DD4183 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -550,6 +644,76 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0FB201F695C67A3A8A74419 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrintWatch Extension/Pods-OctoPrintWatch Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-watchOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Wrap-watchOS/Wrap.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wrap.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrintWatch Extension/Pods-OctoPrintWatch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA1D73C1B99866168AD4AC67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Wrap-iOS/Wrap.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wrap.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F845389ECE442214E9FB954B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCBA494A248C7F5590C22076 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommonCodePhone/Pods-CommonCodePhone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -568,6 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6612A9D41F93B31B002D009A /* NetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +740,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,8 +917,9 @@
 		};
 		6671800F1F939D22007587C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF734E81FA38E4AF0A3E5689 /* Pods-OctoPrint.debug.xcconfig */;
+			baseConfigurationReference = FB1D381EFB77AA6660CF6733 /* Pods-OctoPrint.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8PX97HSB8;
@@ -767,8 +934,9 @@
 		};
 		667180101F939D22007587C8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F4694147FECDC805A01DA65 /* Pods-OctoPrint.release.xcconfig */;
+			baseConfigurationReference = 36F86D595D9B1ED9A86C3A1D /* Pods-OctoPrint.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8PX97HSB8;
@@ -783,6 +951,7 @@
 		};
 		6671803C1F93A60C007587C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF2D6177E63F50E7FB5B4E9F /* Pods-CommonCodePhone.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -809,6 +978,7 @@
 		};
 		6671803D1F93A60C007587C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF708385537B68411605ADCF /* Pods-CommonCodePhone.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -834,6 +1004,7 @@
 		};
 		6671804B1F93A61B007587C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8B283A8E4362C9FF806C494 /* Pods-CommonCodeWatch.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -863,6 +1034,7 @@
 		};
 		6671804C1F93A61B007587C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84A30FEF6C22521D17416B2A /* Pods-CommonCodeWatch.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -891,6 +1063,7 @@
 		};
 		667180731F93A6B5007587C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 765E2E9ADBDB4E0B2EBFF0CA /* Pods-OctoPrintWatch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -909,6 +1082,7 @@
 		};
 		667180741F93A6B5007587C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92E36DC8E331AE380454DF04 /* Pods-OctoPrintWatch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;

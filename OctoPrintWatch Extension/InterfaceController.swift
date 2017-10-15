@@ -8,12 +8,13 @@
 
 import WatchKit
 import Foundation
+import CommonCodeWatch
 
 class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-
+        NetworkManager.shared.getVersionNumber()
         // Configure interface objects here.
     }
     
