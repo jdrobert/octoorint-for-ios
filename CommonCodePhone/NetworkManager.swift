@@ -23,14 +23,23 @@ public class NetworkManager {
     public func getJobProgress(success: @escaping (OPJobStatus) -> Void, failure: @escaping () -> Void) {
         let url = String(format:"%@/job", baseURL)
         
-        getRequest(url: url, success: { response in
-            do {
-                if let responseValue = response {
-                    let decoder = JSONDecoder()
-                    let status = try decoder.decode(OPJobStatus.self, from: responseValue)
-                    success(status)
-                }
-            } catch {
+        getRequest(url: url, success: { [weak self] response in
+            if let responseValue: OPJobStatus = self?.decodeObject(from: response) {
+                success(responseValue)
+            } else {
+                failure()
+            }
+        }) { response in
+            failure()
+        }
+    }
+    
+    public func getConnectionInformation(success: @escaping (OPConnectionInformation) -> Void, failure: @escaping () -> Void) {
+        let url = String(format:"%@/connection",baseURL)
+        getRequest(url: url, success: { [weak self] response in
+            if let responseValue: OPConnectionInformation = self?.decodeObject(from: response) {
+                success(responseValue)
+            } else {
                 failure()
             }
         }) { response in
@@ -40,19 +49,28 @@ public class NetworkManager {
     
     public func getVersionNumber(success: @escaping (OPVersion) -> Void, failure: @escaping () -> Void) {
         let url = String(format:"%@/version",baseURL)
-        getRequest(url: url, success: { response in
-            do {
-                if let responseValue = response {
-                    let decoder = JSONDecoder()
-                    let version = try decoder.decode(OPVersion.self, from: responseValue)
-                    success(version)
-                }
-            } catch {
+        getRequest(url: url, success: { [weak self] response in
+            if let responseValue: OPVersion = self?.decodeObject(from: response) {
+                success(responseValue)
+            } else {
                 failure()
             }
         }) { response in
             failure()
         }
+    }
+    
+    private func decodeObject<T>(from response:Data?) -> T? where T:Decodable {
+        do {
+            if let responseValue = response {
+                let decoder = JSONDecoder()
+                return try decoder.decode(T.self, from: responseValue)
+            }
+        } catch {
+            print(error)
+        }
+        
+        return nil
     }
     
     private func getRequest(url: String, parameters: Parameters? = nil, success: @escaping (Data?) -> Void, failure: @escaping (Data?) -> Void) {
