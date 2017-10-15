@@ -20,11 +20,34 @@ public class NetworkManager {
         sessionManager = Alamofire.SessionManager(configuration: config)
     }
     
-    public func getVersionNumber() {
+    public func getVersionNumber(success: @escaping (OctoPrintVersion) -> Void, failure: @escaping () -> Void) {
         let url = String(format:"%@/version",baseURL)
-        
-        sessionManager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
-            print(String(data:response.data!,encoding:.utf8)!)
+        getRequest(url: url, success: { response in
+            do {
+                if let responseValue = response {
+                    let decoder = JSONDecoder()
+                    let version = try decoder.decode(OctoPrintVersion.self, from: responseValue)
+                    success(version)
+                }
+            } catch {
+                failure()
+            }
+        }) { response in
+            failure()
+        }
+    }
+    
+    private func getRequest(url: String, parameters: Parameters? = nil, success: @escaping (Data?) -> Void, failure: @escaping (Data?) -> Void) {
+        makeRequest(url: url, method: .get, parameters: parameters, success: success, failure: failure)
+    }
+    
+    private func makeRequest(url: String, method: HTTPMethod, parameters: Parameters? = nil, success: @escaping (Data?) -> Void, failure: @escaping (Data?) -> Void) {
+        sessionManager.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
+            if response.result.isSuccess {
+                success(response.data)
+            } else {
+                failure(response.data)
+            }
         }
     }
 }

@@ -13,7 +13,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkManager.shared.getVersionNumber()
+        NetworkManager.shared.getVersionNumber(success: { (version) in
+            print(version)
+        }) {
+            print("failure")
+        }
     }
 
     override func didReceiveMemoryWarning() {
