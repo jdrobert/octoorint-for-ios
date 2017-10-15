@@ -13,7 +13,100 @@
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
 		667180071F939D22007587C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667180061F939D22007587C8 /* Assets.xcassets */; };
 		6671800A1F939D22007587C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180081F939D22007587C8 /* LaunchScreen.storyboard */; };
+		667180371F93A60C007587C8 /* CommonCodePhone.h in Headers */ = {isa = PBXBuildFile; fileRef = 667180351F93A60C007587C8 /* CommonCodePhone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6671803A1F93A60C007587C8 /* CommonCodePhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667180331F93A60C007587C8 /* CommonCodePhone.framework */; };
+		6671803B1F93A60C007587C8 /* CommonCodePhone.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 667180331F93A60C007587C8 /* CommonCodePhone.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		667180491F93A61B007587C8 /* CommonCodeWatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 667180471F93A61B007587C8 /* CommonCodeWatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		667180561F93A6B4007587C8 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180541F93A6B4007587C8 /* Interface.storyboard */; };
+		667180581F93A6B4007587C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667180571F93A6B4007587C8 /* Assets.xcassets */; };
+		6671805F1F93A6B5007587C8 /* OctoPrintWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6671805E1F93A6B5007587C8 /* OctoPrintWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		667180641F93A6B5007587C8 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180631F93A6B5007587C8 /* InterfaceController.swift */; };
+		667180661F93A6B5007587C8 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180651F93A6B5007587C8 /* ExtensionDelegate.swift */; };
+		667180681F93A6B5007587C8 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180671F93A6B5007587C8 /* NotificationController.swift */; };
+		6671806A1F93A6B5007587C8 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180691F93A6B5007587C8 /* ComplicationController.swift */; };
+		6671806C1F93A6B5007587C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6671806B1F93A6B5007587C8 /* Assets.xcassets */; };
+		667180711F93A6B5007587C8 /* OctoPrintWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 667180521F93A6B4007587C8 /* OctoPrintWatch.app */; };
+		667180801F93A910007587C8 /* CommonCodeWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667180451F93A61B007587C8 /* CommonCodeWatch.framework */; };
+		667180811F93A910007587C8 /* CommonCodeWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 667180451F93A61B007587C8 /* CommonCodeWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		667180381F93A60C007587C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66717FF41F939D21007587C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 667180321F93A60C007587C8;
+			remoteInfo = CommonCodePhone;
+		};
+		667180601F93A6B5007587C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66717FF41F939D21007587C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6671805D1F93A6B5007587C8;
+			remoteInfo = "OctoPrintWatch Extension";
+		};
+		6671806F1F93A6B5007587C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66717FF41F939D21007587C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 667180511F93A6B4007587C8;
+			remoteInfo = OctoPrintWatch;
+		};
+		667180821F93A910007587C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66717FF41F939D21007587C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 667180441F93A61B007587C8;
+			remoteInfo = CommonCodeWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6671803F1F93A60C007587C8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6671803B1F93A60C007587C8 /* CommonCodePhone.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180751F93A6B5007587C8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6671805F1F93A6B5007587C8 /* OctoPrintWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180791F93A6B5007587C8 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				667180711F93A6B5007587C8 /* OctoPrintWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180841F93A910007587C8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				667180811F93A910007587C8 /* CommonCodeWatch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +116,24 @@
 		667180061F939D22007587C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		667180091F939D22007587C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6671800B1F939D22007587C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		667180331F93A60C007587C8 /* CommonCodePhone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCodePhone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		667180351F93A60C007587C8 /* CommonCodePhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCodePhone.h; sourceTree = "<group>"; };
+		667180361F93A60C007587C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		667180451F93A61B007587C8 /* CommonCodeWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCodeWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		667180471F93A61B007587C8 /* CommonCodeWatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCodeWatch.h; sourceTree = "<group>"; };
+		667180481F93A61B007587C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		667180521F93A6B4007587C8 /* OctoPrintWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrintWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		667180551F93A6B4007587C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		667180571F93A6B4007587C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		667180591F93A6B4007587C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6671805E1F93A6B5007587C8 /* OctoPrintWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OctoPrintWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		667180631F93A6B5007587C8 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		667180651F93A6B5007587C8 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		667180671F93A6B5007587C8 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		667180691F93A6B5007587C8 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		6671806B1F93A6B5007587C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6671806D1F93A6B5007587C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6671806E1F93A6B5007587C8 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		6F4694147FECDC805A01DA65 /* Pods-OctoPrint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.release.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.release.xcconfig"; sourceTree = "<group>"; };
 		CF734E81FA38E4AF0A3E5689 /* Pods-OctoPrint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.debug.xcconfig"; sourceTree = "<group>"; };
 		F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OctoPrint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +145,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				1124E92EB799E76CEEF35D80 /* Pods_OctoPrint.framework in Frameworks */,
+				6671803A1F93A60C007587C8 /* CommonCodePhone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6671802F1F93A60C007587C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180411F93A61B007587C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6671805B1F93A6B5007587C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667180801F93A910007587C8 /* CommonCodeWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6671807E1F93A6E4007587C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +202,10 @@
 			isa = PBXGroup;
 			children = (
 				66717FFE1F939D22007587C8 /* OctoPrint */,
+				667180341F93A60C007587C8 /* CommonCodePhone */,
+				667180461F93A61B007587C8 /* CommonCodeWatch */,
+				667180531F93A6B4007587C8 /* OctoPrintWatch */,
+				667180621F93A6B5007587C8 /* OctoPrintWatch Extension */,
 				66717FFD1F939D22007587C8 /* Products */,
 				35B5C962133BB2BF78646B72 /* Pods */,
 				416F6214306ADB3F4FB836B8 /* Frameworks */,
@@ -71,6 +216,10 @@
 			isa = PBXGroup;
 			children = (
 				66717FFC1F939D22007587C8 /* OctoPrint.app */,
+				667180331F93A60C007587C8 /* CommonCodePhone.framework */,
+				667180451F93A61B007587C8 /* CommonCodeWatch.framework */,
+				667180521F93A6B4007587C8 /* OctoPrintWatch.app */,
+				6671805E1F93A6B5007587C8 /* OctoPrintWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,7 +237,68 @@
 			path = OctoPrint;
 			sourceTree = "<group>";
 		};
+		667180341F93A60C007587C8 /* CommonCodePhone */ = {
+			isa = PBXGroup;
+			children = (
+				667180351F93A60C007587C8 /* CommonCodePhone.h */,
+				667180361F93A60C007587C8 /* Info.plist */,
+			);
+			path = CommonCodePhone;
+			sourceTree = "<group>";
+		};
+		667180461F93A61B007587C8 /* CommonCodeWatch */ = {
+			isa = PBXGroup;
+			children = (
+				667180471F93A61B007587C8 /* CommonCodeWatch.h */,
+				667180481F93A61B007587C8 /* Info.plist */,
+			);
+			path = CommonCodeWatch;
+			sourceTree = "<group>";
+		};
+		667180531F93A6B4007587C8 /* OctoPrintWatch */ = {
+			isa = PBXGroup;
+			children = (
+				667180541F93A6B4007587C8 /* Interface.storyboard */,
+				667180571F93A6B4007587C8 /* Assets.xcassets */,
+				667180591F93A6B4007587C8 /* Info.plist */,
+			);
+			path = OctoPrintWatch;
+			sourceTree = "<group>";
+		};
+		667180621F93A6B5007587C8 /* OctoPrintWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				667180631F93A6B5007587C8 /* InterfaceController.swift */,
+				667180651F93A6B5007587C8 /* ExtensionDelegate.swift */,
+				667180671F93A6B5007587C8 /* NotificationController.swift */,
+				667180691F93A6B5007587C8 /* ComplicationController.swift */,
+				6671806B1F93A6B5007587C8 /* Assets.xcassets */,
+				6671806D1F93A6B5007587C8 /* Info.plist */,
+				6671806E1F93A6B5007587C8 /* PushNotificationPayload.apns */,
+			);
+			path = "OctoPrintWatch Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		667180301F93A60C007587C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667180371F93A60C007587C8 /* CommonCodePhone.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180421F93A61B007587C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667180491F93A61B007587C8 /* CommonCodeWatch.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		66717FFB1F939D21007587C8 /* OctoPrint */ = {
@@ -101,15 +311,92 @@
 				66717FFA1F939D21007587C8 /* Resources */,
 				245BA954DAD04183725ED467 /* [CP] Embed Pods Frameworks */,
 				6F9A15556588F76A6AFE48A7 /* [CP] Copy Pods Resources */,
+				6671803F1F93A60C007587C8 /* Embed Frameworks */,
+				667180791F93A6B5007587C8 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				667180391F93A60C007587C8 /* PBXTargetDependency */,
+				667180701F93A6B5007587C8 /* PBXTargetDependency */,
 			);
 			name = OctoPrint;
 			productName = OctoPrint;
 			productReference = 66717FFC1F939D22007587C8 /* OctoPrint.app */;
 			productType = "com.apple.product-type.application";
+		};
+		667180321F93A60C007587C8 /* CommonCodePhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6671803E1F93A60C007587C8 /* Build configuration list for PBXNativeTarget "CommonCodePhone" */;
+			buildPhases = (
+				6671802E1F93A60C007587C8 /* Sources */,
+				6671802F1F93A60C007587C8 /* Frameworks */,
+				667180301F93A60C007587C8 /* Headers */,
+				667180311F93A60C007587C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommonCodePhone;
+			productName = CommonCodePhone;
+			productReference = 667180331F93A60C007587C8 /* CommonCodePhone.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		667180441F93A61B007587C8 /* CommonCodeWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6671804A1F93A61B007587C8 /* Build configuration list for PBXNativeTarget "CommonCodeWatch" */;
+			buildPhases = (
+				667180401F93A61B007587C8 /* Sources */,
+				667180411F93A61B007587C8 /* Frameworks */,
+				667180421F93A61B007587C8 /* Headers */,
+				667180431F93A61B007587C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommonCodeWatch;
+			productName = CommonCodeWatch;
+			productReference = 667180451F93A61B007587C8 /* CommonCodeWatch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		667180511F93A6B4007587C8 /* OctoPrintWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 667180761F93A6B5007587C8 /* Build configuration list for PBXNativeTarget "OctoPrintWatch" */;
+			buildPhases = (
+				667180501F93A6B4007587C8 /* Resources */,
+				667180751F93A6B5007587C8 /* Embed App Extensions */,
+				6671807E1F93A6E4007587C8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				667180611F93A6B5007587C8 /* PBXTargetDependency */,
+			);
+			name = OctoPrintWatch;
+			productName = OctoPrintWatch;
+			productReference = 667180521F93A6B4007587C8 /* OctoPrintWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		6671805D1F93A6B5007587C8 /* OctoPrintWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 667180721F93A6B5007587C8 /* Build configuration list for PBXNativeTarget "OctoPrintWatch Extension" */;
+			buildPhases = (
+				6671805A1F93A6B5007587C8 /* Sources */,
+				6671805B1F93A6B5007587C8 /* Frameworks */,
+				6671805C1F93A6B5007587C8 /* Resources */,
+				667180841F93A910007587C8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				667180831F93A910007587C8 /* PBXTargetDependency */,
+			);
+			name = "OctoPrintWatch Extension";
+			productName = "OctoPrintWatch Extension";
+			productReference = 6671805E1F93A6B5007587C8 /* OctoPrintWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -122,6 +409,24 @@
 				ORGANIZATIONNAME = "Quiver Apps";
 				TargetAttributes = {
 					66717FFB1F939D21007587C8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					667180321F93A60C007587C8 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					667180441F93A61B007587C8 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					667180511F93A6B4007587C8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					6671805D1F93A6B5007587C8 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -141,6 +446,10 @@
 			projectRoot = "";
 			targets = (
 				66717FFB1F939D21007587C8 /* OctoPrint */,
+				667180321F93A60C007587C8 /* CommonCodePhone */,
+				667180441F93A61B007587C8 /* CommonCodeWatch */,
+				667180511F93A6B4007587C8 /* OctoPrintWatch */,
+				6671805D1F93A6B5007587C8 /* OctoPrintWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -153,6 +462,37 @@
 				6671800A1F939D22007587C8 /* LaunchScreen.storyboard in Resources */,
 				667180071F939D22007587C8 /* Assets.xcassets in Resources */,
 				667180051F939D22007587C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180311F93A60C007587C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180431F93A61B007587C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180501F93A6B4007587C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667180581F93A6B4007587C8 /* Assets.xcassets in Resources */,
+				667180561F93A6B4007587C8 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6671805C1F93A6B5007587C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6671806C1F93A6B5007587C8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +564,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6671802E1F93A60C007587C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667180401F93A61B007587C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6671805A1F93A6B5007587C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667180681F93A6B5007587C8 /* NotificationController.swift in Sources */,
+				6671806A1F93A6B5007587C8 /* ComplicationController.swift in Sources */,
+				667180661F93A6B5007587C8 /* ExtensionDelegate.swift in Sources */,
+				667180641F93A6B5007587C8 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		667180391F93A60C007587C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 667180321F93A60C007587C8 /* CommonCodePhone */;
+			targetProxy = 667180381F93A60C007587C8 /* PBXContainerItemProxy */;
+		};
+		667180611F93A6B5007587C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6671805D1F93A6B5007587C8 /* OctoPrintWatch Extension */;
+			targetProxy = 667180601F93A6B5007587C8 /* PBXContainerItemProxy */;
+		};
+		667180701F93A6B5007587C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 667180511F93A6B4007587C8 /* OctoPrintWatch */;
+			targetProxy = 6671806F1F93A6B5007587C8 /* PBXContainerItemProxy */;
+		};
+		667180831F93A910007587C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 667180441F93A61B007587C8 /* CommonCodeWatch */;
+			targetProxy = 667180821F93A910007587C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		667180031F939D22007587C8 /* Main.storyboard */ = {
@@ -241,6 +629,14 @@
 				667180091F939D22007587C8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		667180541F93A6B4007587C8 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				667180551F93A6B4007587C8 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -385,6 +781,190 @@
 			};
 			name = Release;
 		};
+		6671803C1F93A60C007587C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B8PX97HSB8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCodePhone/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.CommonCodePhone;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6671803D1F93A60C007587C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B8PX97HSB8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCodePhone/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.CommonCodePhone;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6671804B1F93A61B007587C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B8PX97HSB8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCodeWatch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.CommonCodeWatch;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		6671804C1F93A61B007587C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B8PX97HSB8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCodeWatch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.CommonCodeWatch;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		667180731F93A6B5007587C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8PX97HSB8;
+				INFOPLIST_FILE = "OctoPrintWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.OctoPrint.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		667180741F93A6B5007587C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8PX97HSB8;
+				INFOPLIST_FILE = "OctoPrintWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.OctoPrint.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		667180771F93A6B5007587C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8PX97HSB8;
+				IBSC_MODULE = OctoPrintWatch_Extension;
+				INFOPLIST_FILE = OctoPrintWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.OctoPrint.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		667180781F93A6B5007587C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8PX97HSB8;
+				IBSC_MODULE = OctoPrintWatch_Extension;
+				INFOPLIST_FILE = OctoPrintWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.OctoPrint.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -402,6 +982,42 @@
 			buildConfigurations = (
 				6671800F1F939D22007587C8 /* Debug */,
 				667180101F939D22007587C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6671803E1F93A60C007587C8 /* Build configuration list for PBXNativeTarget "CommonCodePhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6671803C1F93A60C007587C8 /* Debug */,
+				6671803D1F93A60C007587C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6671804A1F93A61B007587C8 /* Build configuration list for PBXNativeTarget "CommonCodeWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6671804B1F93A61B007587C8 /* Debug */,
+				6671804C1F93A61B007587C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		667180721F93A6B5007587C8 /* Build configuration list for PBXNativeTarget "OctoPrintWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				667180731F93A6B5007587C8 /* Debug */,
+				667180741F93A6B5007587C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		667180761F93A6B5007587C8 /* Build configuration list for PBXNativeTarget "OctoPrintWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				667180771F93A6B5007587C8 /* Debug */,
+				667180781F93A6B5007587C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
