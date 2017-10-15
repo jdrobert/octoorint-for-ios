@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkManager.shared.getJobProgress(success: { (version) in
+        NetworkManager.shared.getConnectionInformation(success: { (version) in
             print(version)
         }) {
             print("failure")

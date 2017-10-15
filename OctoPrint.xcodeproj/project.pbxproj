@@ -25,6 +25,14 @@
 		6612A9E61F93F10D002D009A /* OPFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E41F93F10D002D009A /* OPFile.swift */; };
 		6612A9E81F93F174002D009A /* OPJobProgressInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E71F93F174002D009A /* OPJobProgressInformation.swift */; };
 		6612A9E91F93F174002D009A /* OPJobProgressInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E71F93F174002D009A /* OPJobProgressInformation.swift */; };
+		6612A9EB1F940968002D009A /* OPConnectionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9EA1F940968002D009A /* OPConnectionInformation.swift */; };
+		6612A9EC1F940968002D009A /* OPConnectionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9EA1F940968002D009A /* OPConnectionInformation.swift */; };
+		6612A9EE1F940A17002D009A /* OPCurrentConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9ED1F940A17002D009A /* OPCurrentConnection.swift */; };
+		6612A9EF1F940A17002D009A /* OPCurrentConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9ED1F940A17002D009A /* OPCurrentConnection.swift */; };
+		6612A9F11F940A7E002D009A /* OPConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F01F940A7E002D009A /* OPConnectionOptions.swift */; };
+		6612A9F21F940A7E002D009A /* OPConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F01F940A7E002D009A /* OPConnectionOptions.swift */; };
+		6612A9F41F940BA0002D009A /* OPPrinterProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */; };
+		6612A9F51F940BA0002D009A /* OPPrinterProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
@@ -144,6 +152,10 @@
 		6612A9E11F93F09A002D009A /* OPFilament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPFilament.swift; sourceTree = "<group>"; };
 		6612A9E41F93F10D002D009A /* OPFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPFile.swift; sourceTree = "<group>"; };
 		6612A9E71F93F174002D009A /* OPJobProgressInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPJobProgressInformation.swift; sourceTree = "<group>"; };
+		6612A9EA1F940968002D009A /* OPConnectionInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPConnectionInformation.swift; sourceTree = "<group>"; };
+		6612A9ED1F940A17002D009A /* OPCurrentConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPCurrentConnection.swift; sourceTree = "<group>"; };
+		6612A9F01F940A7E002D009A /* OPConnectionOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPConnectionOptions.swift; sourceTree = "<group>"; };
+		6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPPrinterProfiles.swift; sourceTree = "<group>"; };
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66717FFF1F939D22007587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667180011F939D22007587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +273,10 @@
 				6612A9E11F93F09A002D009A /* OPFilament.swift */,
 				6612A9E41F93F10D002D009A /* OPFile.swift */,
 				6612A9E71F93F174002D009A /* OPJobProgressInformation.swift */,
+				6612A9EA1F940968002D009A /* OPConnectionInformation.swift */,
+				6612A9ED1F940A17002D009A /* OPCurrentConnection.swift */,
+				6612A9F01F940A7E002D009A /* OPConnectionOptions.swift */,
+				6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -765,11 +781,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6612A9E51F93F10D002D009A /* OPFile.swift in Sources */,
+				6612A9F11F940A7E002D009A /* OPConnectionOptions.swift in Sources */,
 				6612A9DF1F93EEAE002D009A /* OPJobInformation.swift in Sources */,
+				6612A9F41F940BA0002D009A /* OPPrinterProfiles.swift in Sources */,
 				6612A9DC1F93EDAD002D009A /* OPJobStatus.swift in Sources */,
 				6612A9D41F93B31B002D009A /* NetworkManager.swift in Sources */,
 				6612A9D91F93E7E8002D009A /* OPVersion.swift in Sources */,
+				6612A9EB1F940968002D009A /* OPConnectionInformation.swift in Sources */,
 				6612A9E21F93F09A002D009A /* OPFilament.swift in Sources */,
+				6612A9EE1F940A17002D009A /* OPCurrentConnection.swift in Sources */,
 				6612A9E81F93F174002D009A /* OPJobProgressInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,11 +799,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6612A9E61F93F10D002D009A /* OPFile.swift in Sources */,
+				6612A9F21F940A7E002D009A /* OPConnectionOptions.swift in Sources */,
 				6612A9E01F93EEAE002D009A /* OPJobInformation.swift in Sources */,
+				6612A9F51F940BA0002D009A /* OPPrinterProfiles.swift in Sources */,
 				6612A9DD1F93EDAD002D009A /* OPJobStatus.swift in Sources */,
 				6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */,
 				6612A9DA1F93E7E8002D009A /* OPVersion.swift in Sources */,
+				6612A9EC1F940968002D009A /* OPConnectionInformation.swift in Sources */,
 				6612A9E31F93F09A002D009A /* OPFilament.swift in Sources */,
+				6612A9EF1F940A17002D009A /* OPCurrentConnection.swift in Sources */,
 				6612A9E91F93F174002D009A /* OPJobProgressInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
