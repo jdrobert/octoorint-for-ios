@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1124E92EB799E76CEEF35D80 /* Pods_OctoPrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
@@ -22,6 +23,9 @@
 		667180061F939D22007587C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		667180091F939D22007587C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6671800B1F939D22007587C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F4694147FECDC805A01DA65 /* Pods-OctoPrint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.release.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.release.xcconfig"; sourceTree = "<group>"; };
+		CF734E81FA38E4AF0A3E5689 /* Pods-OctoPrint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.debug.xcconfig"; sourceTree = "<group>"; };
+		F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OctoPrint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1124E92EB799E76CEEF35D80 /* Pods_OctoPrint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35B5C962133BB2BF78646B72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF734E81FA38E4AF0A3E5689 /* Pods-OctoPrint.debug.xcconfig */,
+				6F4694147FECDC805A01DA65 /* Pods-OctoPrint.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		416F6214306ADB3F4FB836B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		66717FF31F939D21007587C8 = {
 			isa = PBXGroup;
 			children = (
 				66717FFE1F939D22007587C8 /* OctoPrint */,
 				66717FFD1F939D22007587C8 /* Products */,
+				35B5C962133BB2BF78646B72 /* Pods */,
+				416F6214306ADB3F4FB836B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6671800E1F939D22007587C8 /* Build configuration list for PBXNativeTarget "OctoPrint" */;
 			buildPhases = (
+				CF6C72602F34B86319468793 /* [CP] Check Pods Manifest.lock */,
 				66717FF81F939D21007587C8 /* Sources */,
 				66717FF91F939D21007587C8 /* Frameworks */,
 				66717FFA1F939D21007587C8 /* Resources */,
+				245BA954DAD04183725ED467 /* [CP] Embed Pods Frameworks */,
+				6F9A15556588F76A6AFE48A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		245BA954DAD04183725ED467 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Wrap/Wrap.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wrap.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F9A15556588F76A6AFE48A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF6C72602F34B86319468793 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OctoPrint-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		66717FF81F939D21007587C8 /* Sources */ = {
@@ -272,6 +355,7 @@
 		};
 		6671800F1F939D22007587C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF734E81FA38E4AF0A3E5689 /* Pods-OctoPrint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +371,7 @@
 		};
 		667180101F939D22007587C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F4694147FECDC805A01DA65 /* Pods-OctoPrint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
