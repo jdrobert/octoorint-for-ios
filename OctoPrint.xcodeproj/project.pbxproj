@@ -13,8 +13,18 @@
 		5FAC8354DF889789A61DCA87 /* Pods_CommonCodePhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36A26618289844F07F0BE7 /* Pods_CommonCodePhone.framework */; };
 		6612A9D41F93B31B002D009A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D31F93B31B002D009A /* NetworkManager.swift */; };
 		6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D31F93B31B002D009A /* NetworkManager.swift */; };
-		6612A9D91F93E7E8002D009A /* OctoPrintVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D81F93E7E8002D009A /* OctoPrintVersion.swift */; };
-		6612A9DA1F93E7E8002D009A /* OctoPrintVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D81F93E7E8002D009A /* OctoPrintVersion.swift */; };
+		6612A9D91F93E7E8002D009A /* OPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D81F93E7E8002D009A /* OPVersion.swift */; };
+		6612A9DA1F93E7E8002D009A /* OPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D81F93E7E8002D009A /* OPVersion.swift */; };
+		6612A9DC1F93EDAD002D009A /* OPJobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9DB1F93EDAD002D009A /* OPJobStatus.swift */; };
+		6612A9DD1F93EDAD002D009A /* OPJobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9DB1F93EDAD002D009A /* OPJobStatus.swift */; };
+		6612A9DF1F93EEAE002D009A /* OPJobInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9DE1F93EEAE002D009A /* OPJobInformation.swift */; };
+		6612A9E01F93EEAE002D009A /* OPJobInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9DE1F93EEAE002D009A /* OPJobInformation.swift */; };
+		6612A9E21F93F09A002D009A /* OPFilament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E11F93F09A002D009A /* OPFilament.swift */; };
+		6612A9E31F93F09A002D009A /* OPFilament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E11F93F09A002D009A /* OPFilament.swift */; };
+		6612A9E51F93F10D002D009A /* OPFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E41F93F10D002D009A /* OPFile.swift */; };
+		6612A9E61F93F10D002D009A /* OPFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E41F93F10D002D009A /* OPFile.swift */; };
+		6612A9E81F93F174002D009A /* OPJobProgressInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E71F93F174002D009A /* OPJobProgressInformation.swift */; };
+		6612A9E91F93F174002D009A /* OPJobProgressInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9E71F93F174002D009A /* OPJobProgressInformation.swift */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
@@ -128,7 +138,12 @@
 		04B9DE2931166285F52FF4D6 /* Pods_OctoPrintWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OctoPrintWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F86D595D9B1ED9A86C3A1D /* Pods-OctoPrint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.release.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.release.xcconfig"; sourceTree = "<group>"; };
 		6612A9D31F93B31B002D009A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		6612A9D81F93E7E8002D009A /* OctoPrintVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctoPrintVersion.swift; sourceTree = "<group>"; };
+		6612A9D81F93E7E8002D009A /* OPVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPVersion.swift; sourceTree = "<group>"; };
+		6612A9DB1F93EDAD002D009A /* OPJobStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPJobStatus.swift; sourceTree = "<group>"; };
+		6612A9DE1F93EEAE002D009A /* OPJobInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPJobInformation.swift; sourceTree = "<group>"; };
+		6612A9E11F93F09A002D009A /* OPFilament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPFilament.swift; sourceTree = "<group>"; };
+		6612A9E41F93F10D002D009A /* OPFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPFile.swift; sourceTree = "<group>"; };
+		6612A9E71F93F174002D009A /* OPJobProgressInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPJobProgressInformation.swift; sourceTree = "<group>"; };
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66717FFF1F939D22007587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667180011F939D22007587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +255,12 @@
 		6612A9D71F93E7B2002D009A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6612A9D81F93E7E8002D009A /* OctoPrintVersion.swift */,
+				6612A9D81F93E7E8002D009A /* OPVersion.swift */,
+				6612A9DB1F93EDAD002D009A /* OPJobStatus.swift */,
+				6612A9DE1F93EEAE002D009A /* OPJobInformation.swift */,
+				6612A9E11F93F09A002D009A /* OPFilament.swift */,
+				6612A9E41F93F10D002D009A /* OPFile.swift */,
+				6612A9E71F93F174002D009A /* OPJobProgressInformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -744,8 +764,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6612A9E51F93F10D002D009A /* OPFile.swift in Sources */,
+				6612A9DF1F93EEAE002D009A /* OPJobInformation.swift in Sources */,
+				6612A9DC1F93EDAD002D009A /* OPJobStatus.swift in Sources */,
 				6612A9D41F93B31B002D009A /* NetworkManager.swift in Sources */,
-				6612A9D91F93E7E8002D009A /* OctoPrintVersion.swift in Sources */,
+				6612A9D91F93E7E8002D009A /* OPVersion.swift in Sources */,
+				6612A9E21F93F09A002D009A /* OPFilament.swift in Sources */,
+				6612A9E81F93F174002D009A /* OPJobProgressInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,8 +778,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6612A9E61F93F10D002D009A /* OPFile.swift in Sources */,
+				6612A9E01F93EEAE002D009A /* OPJobInformation.swift in Sources */,
+				6612A9DD1F93EDAD002D009A /* OPJobStatus.swift in Sources */,
 				6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */,
-				6612A9DA1F93E7E8002D009A /* OctoPrintVersion.swift in Sources */,
+				6612A9DA1F93E7E8002D009A /* OPVersion.swift in Sources */,
+				6612A9E31F93F09A002D009A /* OPFilament.swift in Sources */,
+				6612A9E91F93F174002D009A /* OPJobProgressInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

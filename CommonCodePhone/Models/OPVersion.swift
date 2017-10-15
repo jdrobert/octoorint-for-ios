@@ -1,5 +1,5 @@
 //
-//  OctoPrintVersion.swift
+//  OPVersion.swift
 //  OctoPrint
 //
 //  Created by Jeremy Roberts on 10/15/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct OctoPrintVersion: Codable {
+public struct OPVersion: Codable {
     let api: String
     let server: String
 }
