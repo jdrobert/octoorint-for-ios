@@ -8,8 +8,8 @@
 
 import Foundation
 public struct OPFile: Codable {
-    let name: String?
-    let path: String?
-    let type: String?
-    let typePath: [String:String]?
+    public let name: String?
+    public let path: String?
+    public let type: String?
+    public let typePath: [String:String]?
 }

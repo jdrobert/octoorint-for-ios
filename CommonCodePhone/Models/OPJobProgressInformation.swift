@@ -8,8 +8,8 @@
 
 import Foundation
 public struct OPJobProgressInformation: Codable {
-    let completion: Float?
-    let filepos: Int?
-    let printTime: Int?
-    let printTimeLeft: Int?
+    public let completion: Float?
+    public let filepos: Int?
+    public let printTime: Int?
+    public let printTimeLeft: Int?
 }
