@@ -8,6 +8,6 @@
 
 import Foundation
 public struct OPFilament: Codable {
-    let length: Int?
-    let volume: Float?
+    public let length: Int?
+    public let volume: Float?
 }

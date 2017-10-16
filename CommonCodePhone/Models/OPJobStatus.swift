@@ -9,7 +9,7 @@
 import Foundation
 
 public struct OPJobStatus: Codable {
-    let job: OPJobInformation
-    let progress: OPJobProgressInformation
-    let state: String
+    public let job: OPJobInformation
+    public let progress: OPJobProgressInformation
+    public let state: String
 }

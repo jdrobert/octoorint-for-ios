@@ -8,9 +8,9 @@
 
 import Foundation
 public struct OPJobInformation: Codable {
-    let averagePrintTime: Int?
-    let estimatedPrintTime: Int?
-    let lastPrintTime: Int?
-    let filament: OPFilament?
-    let file: OPFile
+    public let averagePrintTime: Double?
+    public let estimatedPrintTime: Double?
+    public let lastPrintTime: Double?
+    public let filament: OPFilament?
+    public let file: OPFile
 }

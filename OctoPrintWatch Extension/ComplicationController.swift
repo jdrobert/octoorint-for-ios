@@ -7,7 +7,7 @@
 //
 
 import ClockKit
-
+import CommonCodeWatch
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
@@ -32,8 +32,35 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        // Call the handler with the current timeline entry
-        handler(nil)
+        if complication.family == .circularSmall {
+            
+            var text = "Dsc"
+            var fillFraction: Float = 0.0
+            
+            let statusStore = JobStatusStore()
+            
+            if statusStore.hasError {
+                text = "Er"
+            } else if let jobStatus = statusStore.jobStatus {
+                
+                if let completion = jobStatus.progress.completion, jobStatus.state == "Printing" {
+                    text = String(format:"%0.1f",completion)
+                    fillFraction = completion / 100
+                } else if jobStatus.state == "Operational" {
+                    text = "Op"
+                }
+            }
+            
+            let template = CLKComplicationTemplateCircularSmallRingText()
+            template.textProvider = CLKSimpleTextProvider(text: text)
+            template.fillFraction = fillFraction
+            template.ringStyle = .closed
+            
+            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+            handler(timelineEntry)
+        } else {
+            handler(nil)
+        }
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
@@ -49,8 +76,21 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Placeholder Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        var template: CLKComplicationTemplate? = nil
+        
+        if complication.family == .circularSmall {
+            let modularTemplate = CLKComplicationTemplateCircularSmallRingText()
+            modularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+            modularTemplate.fillFraction = 0.7
+            modularTemplate.ringStyle = .closed
+            template = modularTemplate
+        }
+        
+        handler(template)
     }
     
+    func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
+        // Update hourly
+        handler(NSDate(timeIntervalSinceNow: 60*60))
+    }
 }
