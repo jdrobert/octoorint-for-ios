@@ -60,6 +60,19 @@ public class NetworkManager {
         }
     }
     
+    public func getPrtinerState(success: @escaping (OPPrinterState) -> Void, failure: @escaping () -> Void) {
+        let url = String(format:"%@/printer",baseURL)
+        getRequest(url: url, success: { [weak self] response in
+            if let responseValue: OPPrinterState = self?.decodeObject(from: response) {
+                success(responseValue)
+            } else {
+                failure()
+            }
+        }) { response in
+            failure()
+        }
+    }
+    
     private func decodeObject<T>(from response:Data?) -> T? where T:Decodable {
         do {
             if let responseValue = response {

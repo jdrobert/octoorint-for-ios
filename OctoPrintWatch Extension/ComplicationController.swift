@@ -88,9 +88,4 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         handler(template)
     }
-    
-    func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
-        // Update hourly
-        handler(NSDate(timeIntervalSinceNow: 60*60))
-    }
 }
