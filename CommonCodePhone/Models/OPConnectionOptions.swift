@@ -8,11 +8,11 @@
 
 import Foundation
 public struct OPConnectionOptions: Codable {
-    let ports: [String]
-    let baudrates: [Int]
-    let printerProfiles: [OPPrinterProfiles]
-    let portPreference: String
-    let baudratePreference: Int
-    let printerProfilePreference: String
-    let autoconnect: Bool?
+    public let ports: [String]
+    public let baudrates: [Int]
+    public let printerProfiles: [OPPrinterProfiles]
+    public let portPreference: String
+    public let baudratePreference: Int
+    public let printerProfilePreference: String
+    public let autoconnect: Bool?
 }

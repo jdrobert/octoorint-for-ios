@@ -8,6 +8,6 @@
 
 import Foundation
 public struct OPConnectionInformation: Codable {
-    let current: OPCurrentConnection
-    let options: OPConnectionOptions
+    public let current: OPCurrentConnection
+    public let options: OPConnectionOptions
 }
