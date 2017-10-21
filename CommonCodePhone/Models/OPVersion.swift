@@ -9,6 +9,6 @@
 import Foundation
 
 public struct OPVersion: Codable {
-    let api: String
-    let server: String
+    public let api: String
+    public let server: String
 }

@@ -8,8 +8,8 @@
 
 import Foundation
 public struct OPCurrentConnection: Codable {
-    let state: String
-    let port: String?
-    let baudrate: Int?
-    let printerProfile: String
+    public let state: String
+    public let port: String?
+    public let baudrate: Int?
+    public let printerProfile: String
 }

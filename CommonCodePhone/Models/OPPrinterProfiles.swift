@@ -8,6 +8,6 @@
 
 import Foundation
 public struct OPPrinterProfiles: Codable {
-    let id: String
-    let name: String
+    public let id: String
+    public let name: String
 }
