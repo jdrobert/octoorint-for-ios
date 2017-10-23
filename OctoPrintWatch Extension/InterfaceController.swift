@@ -8,19 +8,36 @@
 
 import WatchKit
 import Foundation
+import CommonCodeWatch
 
 class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
                 
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date().addingTimeInterval(60) , userInfo: nil, scheduledCompletion: { (error: Error?) in
+        /*WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date().addingTimeInterval(60) , userInfo: nil, scheduledCompletion: { (error: Error?) in
             if error == nil {
                 print("background refresh scheduled")
             }
-        })
+        })*/
+        
+        WatchSessionManager.shared.setupManager()
+        
+        addMenuItem(with: .repeat, title: "Refresh", action: #selector(getPrinterState))
         
         // Configure interface objects here.
+    }
+    
+    @objc private func getPrinterState() {
+        
+        NetworkManager.shared.getVersionNumber(success: { [weak self] (version) in
+            self?.presentAlert(withTitle: "Success", message: "", preferredStyle: .alert, actions: [WKAlertAction(title: "OK", style: .default, handler: {})])
+            
+            print(version)
+        }) { [weak self] in
+            self?.presentAlert(withTitle: "Failure", message: "", preferredStyle: .alert, actions: [WKAlertAction(title: "OK", style: .default, handler: {})])
+            print("failure")
+        }
     }
     
     override func willActivate() {
