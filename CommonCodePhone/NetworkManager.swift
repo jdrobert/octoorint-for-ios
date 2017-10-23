@@ -12,11 +12,19 @@ import Alamofire
 public class NetworkManager {
     public static let shared = NetworkManager()
     private let sessionManager: SessionManager
-    private let baseURL = "http://octopi.local/api"
+    private lazy var baseURL: String = {
+        return String(format:"%@/api",self.connectionInfo.ipAddress ?? "")
+    }()
+    
+    private let connectionInfo = PrinterConnectionInfoStore()
     
     init() {
         let config = URLSessionConfiguration.default
-        config.httpAdditionalHeaders = ["X-Api-Key":"772B1B4E41FC41AD8962698BE5D6925D"]
+        
+        if let apiKey = connectionInfo.apiKey {
+            config.httpAdditionalHeaders = ["X-Api-Key":apiKey]
+        }
+
         sessionManager = Alamofire.SessionManager(configuration: config)
     }
     
@@ -60,7 +68,7 @@ public class NetworkManager {
         }
     }
     
-    public func getPrtinerState(success: @escaping (OPPrinterState) -> Void, failure: @escaping () -> Void) {
+    public func getPrinterState(success: @escaping (OPPrinterState) -> Void, failure: @escaping () -> Void) {
         let url = String(format:"%@/printer",baseURL)
         getRequest(url: url, success: { [weak self] response in
             if let responseValue: OPPrinterState = self?.decodeObject(from: response) {

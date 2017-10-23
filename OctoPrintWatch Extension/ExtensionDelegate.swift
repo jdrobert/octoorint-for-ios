@@ -66,11 +66,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
     
     private func scheduleNextRefresh() {
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date().addingTimeInterval(60) , userInfo: nil, scheduledCompletion: { (error: Error?) in
+        /*WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date().addingTimeInterval(60) , userInfo: nil, scheduledCompletion: { (error: Error?) in
             if error == nil {
                 print("background refresh scheduled")
             }
-        })
+        })*/
     }
 
 }
