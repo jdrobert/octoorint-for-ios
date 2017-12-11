@@ -10,26 +10,28 @@ import UIKit
 import CommonCodePhone
 
 class ViewController: UIViewController {
+    
+    private let dc = DiscoveryClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(syncWithWatch), name: NSNotification.Name(rawValue: Constants.Notifications.watchSessionReady), object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(syncWithWatch), name: NSNotification.Name(rawValue: Constants.Notifications.watchSessionReady), object: nil)
         
-        WatchSessionManager.shared.setupManager()
+        //WatchSessionManager.shared.setupManager()
         
-        let connectionInfo = PrinterConnectionInfoStore()
-        connectionInfo.ipAddress = "http://octopi.local"
-        connectionInfo.apiKey = "772B1B4E41FC41AD8962698BE5D6925D"
+        dc.startDiscovery(with: "_octoprint._tcp") { services in
+            for service in services {
+                if let hostname = service.hostName {
+                    print(hostname)
+                }
+                
+                print(service.name)
+            }
+        }
         
-        //WatchSessionManager.shared
-        
-        //syncWithWatch()
-        
-        NetworkManager.shared.getPrinterState(success: { (version) in
-            print(version)
-        }) {
-            print("failure")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+            self?.dc.stopDiscovery()
         }
     }
 

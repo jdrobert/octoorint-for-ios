@@ -75,6 +75,7 @@
 		66D28E481F956E8B006473A2 /* JobStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D28E461F956E8B006473A2 /* JobStatusStore.swift */; };
 		66D6D6CC1F9E992500567493 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D6D6CB1F9E992500567493 /* Constants.swift */; };
 		66D6D6CD1F9E992500567493 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D6D6CB1F9E992500567493 /* Constants.swift */; };
+		66D6D6D01F9EC78600567493 /* DiscoveryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D6D6CF1F9EC78600567493 /* DiscoveryClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +219,7 @@
 		66782EBA1F9E90BC00C20C13 /* PrinterConnectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterConnectionInfo.swift; sourceTree = "<group>"; };
 		66D28E461F956E8B006473A2 /* JobStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStatusStore.swift; sourceTree = "<group>"; };
 		66D6D6CB1F9E992500567493 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		66D6D6CF1F9EC78600567493 /* DiscoveryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryClient.swift; sourceTree = "<group>"; };
 		765E2E9ADBDB4E0B2EBFF0CA /* Pods-OctoPrintWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrintWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrintWatch Extension/Pods-OctoPrintWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		84A30FEF6C22521D17416B2A /* Pods-CommonCodeWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonCodeWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommonCodeWatch/Pods-CommonCodeWatch.release.xcconfig"; sourceTree = "<group>"; };
 		92E36DC8E331AE380454DF04 /* Pods-OctoPrintWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrintWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrintWatch Extension/Pods-OctoPrintWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -369,11 +371,11 @@
 		667180341F93A60C007587C8 /* CommonCodePhone */ = {
 			isa = PBXGroup;
 			children = (
+				66D6D6CE1F9EC73300567493 /* Network */,
 				6612A9D71F93E7B2002D009A /* Models */,
 				66D28E451F956E71006473A2 /* Stores */,
 				667180351F93A60C007587C8 /* CommonCodePhone.h */,
 				667180361F93A60C007587C8 /* Info.plist */,
-				6612A9D31F93B31B002D009A /* NetworkManager.swift */,
 				66D6D6CB1F9E992500567493 /* Constants.swift */,
 			);
 			path = CommonCodePhone;
@@ -440,6 +442,15 @@
 			path = Stores;
 			sourceTree = "<group>";
 		};
+		66D6D6CE1F9EC73300567493 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6612A9D31F93B31B002D009A /* NetworkManager.swift */,
+				66D6D6CF1F9EC78600567493 /* DiscoveryClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -467,6 +478,7 @@
 			buildConfigurationList = 6671800E1F939D22007587C8 /* Build configuration list for PBXNativeTarget "OctoPrint" */;
 			buildPhases = (
 				A8A12A9F4EFDB33EB2DD4183 /* [CP] Check Pods Manifest.lock */,
+				66A5EDA61FDF2EAB0028B759 /* SwiftLint */,
 				66717FF81F939D21007587C8 /* Sources */,
 				66717FF91F939D21007587C8 /* Frameworks */,
 				66717FFA1F939D21007587C8 /* Resources */,
@@ -701,6 +713,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		66A5EDA61FDF2EAB0028B759 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		718640D3FD5381FD683E58C0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -875,6 +901,7 @@
 				66782E9D1F9BA33300C20C13 /* OPPrinterState.swift in Sources */,
 				66D28E471F956E8B006473A2 /* JobStatusStore.swift in Sources */,
 				66782EB11F9BA72E00C20C13 /* PrinterConnectionInfoStore.swift in Sources */,
+				66D6D6D01F9EC78600567493 /* DiscoveryClient.swift in Sources */,
 				6612A9F41F940BA0002D009A /* OPPrinterProfiles.swift in Sources */,
 				6612A9DC1F93EDAD002D009A /* OPJobStatus.swift in Sources */,
 				66782EA01F9BA3A200C20C13 /* OPSDState.swift in Sources */,
@@ -1145,6 +1172,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.CommonCodePhone;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1172,6 +1200,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.quiverapps.CommonCodePhone;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1200,6 +1229,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1230,6 +1260,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
