@@ -13,11 +13,11 @@ import CommonCodePhone
 class WatchSessionManager: NSObject {
     static let shared = WatchSessionManager()
     private var session = WCSession.default
-    
+
     override init() {
         super.init()
     }
-    
+
     func setupManager() {
         if WCSession.isSupported() {
             session.delegate = self
@@ -27,7 +27,7 @@ class WatchSessionManager: NSObject {
 }
 
 extension WatchSessionManager: WCSessionDelegate {
-    
+
     func updateApplicationContext(applicationContext: [String : AnyObject]) throws {
         if session.isPaired, session.isWatchAppInstalled {
             do {
@@ -37,20 +37,21 @@ extension WatchSessionManager: WCSessionDelegate {
             }
         }
     }
-    
+
     func sessionDidBecomeInactive(_ session: WCSession) {
-        
+
     }
-    
+
     func sessionDidDeactivate(_ session: WCSession) {
-        
+
     }
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState,
+                 error: Error?) {
         if error == nil {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notifications.watchSessionReady), object: nil)
+            NotificationCenter.default.post(
+                name: NSNotification.Name(rawValue: Constants.Notifications.watchSessionReady), object: nil)
         }
     }
-    
-    
+
 }

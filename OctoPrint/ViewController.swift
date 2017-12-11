@@ -10,26 +10,27 @@ import UIKit
 import CommonCodePhone
 
 class ViewController: UIViewController {
-    
+
     private let dc = DiscoveryClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //NotificationCenter.default.addObserver(self, selector: #selector(syncWithWatch), name: NSNotification.Name(rawValue: Constants.Notifications.watchSessionReady), object: nil)
-        
+
+        //NotificationCenter.default.addObserver(self, selector: #selector(syncWithWatch),
+            //name: NSNotification.Name(rawValue: Constants.Notifications.watchSessionReady), object: nil)
+
         //WatchSessionManager.shared.setupManager()
-        
+
         dc.startDiscovery(with: "_octoprint._tcp") { services in
             for service in services {
                 if let hostname = service.hostName {
                     print(hostname)
                 }
-                
+
                 print(service.name)
             }
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
             self?.dc.stopDiscovery()
         }
@@ -39,16 +40,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @objc private func syncWithWatch() {
         let info = PrinterConnectionInfoStore()
         if let cachedValues = info.getCachedValues() {
-            try? WatchSessionManager.shared.updateApplicationContext(applicationContext: ["connectionInfo":cachedValues])
+            try? WatchSessionManager.shared.updateApplicationContext(
+                applicationContext: ["connectionInfo":cachedValues])
         }
-        
-        
+
     }
 
-
 }
-

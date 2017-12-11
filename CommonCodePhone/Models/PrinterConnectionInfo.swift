@@ -11,7 +11,7 @@ import Foundation
 public struct PrinterConnectionInfo: Codable {
     public let ipAddress: String
     public let apiKey: String
-    
+
     public init (ipAddress:String, apiKey:String) {
         self.ipAddress = ipAddress
         self.apiKey = apiKey
