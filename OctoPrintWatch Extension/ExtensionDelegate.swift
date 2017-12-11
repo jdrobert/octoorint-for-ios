@@ -31,9 +31,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
                 // Be sure to complete the background task once you’re done.
-                
+
                 let statusStore = JobStatusStore()
-                
+
                 NetworkManager.shared.getJobProgress(success: { [weak self] (status) in
                     print(status)
                     statusStore.jobStatus = status
@@ -47,8 +47,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                     self?.scheduleNextRefresh()
                     backgroundTask.setTaskCompletedWithSnapshot(false)
                 })
-                
-                
+
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
                 snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
@@ -64,7 +63,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
-    
+
     private func scheduleNextRefresh() {
         /*WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date().addingTimeInterval(60) , userInfo: nil, scheduledCompletion: { (error: Error?) in
             if error == nil {
