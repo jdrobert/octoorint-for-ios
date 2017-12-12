@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hEt-z8-Bo2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FOJ-eT-rPb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,6 +27,61 @@
             </objects>
             <point key="canvasLocation" x="-1950" y="112"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D2n-hn-SAb">
+            <objects>
+                <navigationController id="FOJ-eT-rPb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="SCl-7i-wEd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Licorice"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nQG-Qy-lcF" kind="relationship" relationship="rootViewController" id="d5A-NG-lb9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHQ-hd-Alh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1950" y="-669"/>
+        </scene>
+        <!--Discovery View Controller-->
+        <scene sceneID="ZzC-jn-hp7">
+            <objects>
+                <viewController id="nQG-Qy-lcF" customClass="DiscoveryViewController" customModule="OctoPrint" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Dl-oW-AyG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWb-wJ-Mo9" customClass="DiscoveryModal" customModule="OctoPrint" customModuleProvider="target">
+                                <rect key="frame" x="20" y="165.5" width="335" height="335"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zWb-wJ-Mo9" secondAttribute="height" multiplier="1:1" id="dfq-Ok-2jB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="Dark Green"/>
+                        <constraints>
+                            <constraint firstItem="zWb-wJ-Mo9" firstAttribute="centerY" secondItem="0Dl-oW-AyG" secondAttribute="centerY" id="IBF-k9-x5G"/>
+                            <constraint firstItem="zWb-wJ-Mo9" firstAttribute="leading" secondItem="Haj-Vd-Ka8" secondAttribute="leading" constant="20" id="gpO-Rj-kG4"/>
+                            <constraint firstItem="Haj-Vd-Ka8" firstAttribute="trailing" secondItem="zWb-wJ-Mo9" secondAttribute="trailing" constant="20" id="u1v-5N-zA0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Haj-Vd-Ka8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pWa-cE-B6B"/>
+                    <connections>
+                        <outlet property="discoveryModal" destination="zWb-wJ-Mo9" id="qPi-8f-BIq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPM-Th-uL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1111" y="-670"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -42,4 +99,12 @@
             <point key="canvasLocation" x="-1041" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Dark Green">
+            <color red="0.0" green="0.35294117647058826" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Licorice">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

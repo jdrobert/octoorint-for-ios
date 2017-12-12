@@ -71,6 +71,11 @@
 		66782EB81F9D256B00C20C13 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66782EB71F9D256B00C20C13 /* WatchSessionManager.swift */; };
 		66782EBB1F9E90BC00C20C13 /* PrinterConnectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66782EBA1F9E90BC00C20C13 /* PrinterConnectionInfo.swift */; };
 		66782EBC1F9E90BC00C20C13 /* PrinterConnectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66782EBA1F9E90BC00C20C13 /* PrinterConnectionInfo.swift */; };
+		6699EDA71FDF3E0B00207D1D /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699EDA61FDF3E0B00207D1D /* DiscoveryViewController.swift */; };
+		6699EDAB1FDF3F1800207D1D /* DiscoveryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699EDAA1FDF3F1800207D1D /* DiscoveryModal.swift */; };
+		6699EDB11FDF4D7800207D1D /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699EDB01FDF4D7800207D1D /* DiscoveryViewModel.swift */; };
+		6699EDB31FDF52AC00207D1D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6699EDB21FDF52AC00207D1D /* Colors.xcassets */; };
+		6699EDBF1FDF595900207D1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6699EDBE1FDF591F00207D1D /* Localizable.strings */; };
 		66D28E471F956E8B006473A2 /* JobStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D28E461F956E8B006473A2 /* JobStatusStore.swift */; };
 		66D28E481F956E8B006473A2 /* JobStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D28E461F956E8B006473A2 /* JobStatusStore.swift */; };
 		66D6D6CC1F9E992500567493 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D6D6CB1F9E992500567493 /* Constants.swift */; };
@@ -217,6 +222,11 @@
 		66782EB51F9D22A300C20C13 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		66782EB71F9D256B00C20C13 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		66782EBA1F9E90BC00C20C13 /* PrinterConnectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterConnectionInfo.swift; sourceTree = "<group>"; };
+		6699EDA61FDF3E0B00207D1D /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		6699EDAA1FDF3F1800207D1D /* DiscoveryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryModal.swift; sourceTree = "<group>"; };
+		6699EDB01FDF4D7800207D1D /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
+		6699EDB21FDF52AC00207D1D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		6699EDBD1FDF591F00207D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		66D28E461F956E8B006473A2 /* JobStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStatusStore.swift; sourceTree = "<group>"; };
 		66D6D6CB1F9E992500567493 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		66D6D6CF1F9EC78600567493 /* DiscoveryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryClient.swift; sourceTree = "<group>"; };
@@ -357,13 +367,17 @@
 			isa = PBXGroup;
 			children = (
 				66782EB41F9D229000C20C13 /* Managers */,
+				6699EDA81FDF3E1400207D1D /* ViewControllers */,
+				6699EDAF1FDF4D4700207D1D /* ViewModels */,
+				6699EDA91FDF3ED400207D1D /* Views */,
+				6699EDB41FDF54DC00207D1D /* Resources */,
 				66782EAE1F9BA6DE00C20C13 /* OctoPrint.entitlements */,
+				6671800B1F939D22007587C8 /* Info.plist */,
 				66717FFF1F939D22007587C8 /* AppDelegate.swift */,
-				667180011F939D22007587C8 /* ViewController.swift */,
-				667180031F939D22007587C8 /* Main.storyboard */,
 				667180061F939D22007587C8 /* Assets.xcassets */,
 				667180081F939D22007587C8 /* LaunchScreen.storyboard */,
-				6671800B1F939D22007587C8 /* Info.plist */,
+				667180031F939D22007587C8 /* Main.storyboard */,
+				6699EDB21FDF52AC00207D1D /* Colors.xcassets */,
 			);
 			path = OctoPrint;
 			sourceTree = "<group>";
@@ -431,6 +445,39 @@
 				66782EB71F9D256B00C20C13 /* WatchSessionManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		6699EDA81FDF3E1400207D1D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				667180011F939D22007587C8 /* ViewController.swift */,
+				6699EDA61FDF3E0B00207D1D /* DiscoveryViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6699EDA91FDF3ED400207D1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6699EDAA1FDF3F1800207D1D /* DiscoveryModal.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6699EDAF1FDF4D4700207D1D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6699EDB01FDF4D7800207D1D /* DiscoveryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6699EDB41FDF54DC00207D1D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6699EDBE1FDF591F00207D1D /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		66D28E451F956E71006473A2 /* Stores */ = {
@@ -655,7 +702,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6699EDBF1FDF595900207D1D /* Localizable.strings in Resources */,
 				6671800A1F939D22007587C8 /* LaunchScreen.storyboard in Resources */,
+				6699EDB31FDF52AC00207D1D /* Colors.xcassets in Resources */,
 				667180071F939D22007587C8 /* Assets.xcassets in Resources */,
 				667180051F939D22007587C8 /* Main.storyboard in Resources */,
 			);
@@ -725,7 +774,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		718640D3FD5381FD683E58C0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -884,9 +933,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6699EDAB1FDF3F1800207D1D /* DiscoveryModal.swift in Sources */,
+				6699EDB11FDF4D7800207D1D /* DiscoveryViewModel.swift in Sources */,
 				66782EB61F9D22A300C20C13 /* WatchSessionManager.swift in Sources */,
 				667180021F939D22007587C8 /* ViewController.swift in Sources */,
 				667180001F939D22007587C8 /* AppDelegate.swift in Sources */,
+				6699EDA71FDF3E0B00207D1D /* DiscoveryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,6 +1059,14 @@
 				667180551F93A6B4007587C8 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		6699EDBE1FDF591F00207D1D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6699EDBD1FDF591F00207D1D /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

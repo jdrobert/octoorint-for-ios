@@ -12,4 +12,16 @@ public struct Constants {
     public struct Notifications {
         public static let watchSessionReady = "watchSessionReady"
     }
+
+    public struct Colors {
+        public static let burgundy = "Burgundy"
+        public static let darkGreen = "Dark Green"
+        public static let harvestGold = "Harvest Gold"
+        public static let licorice = "Licorice"
+        public static let oxfordBlue = "Oxford Blue"
+    }
+
+    public struct Localization {
+        public static let discoveryVCTitle = "discovery_vc_title"
+    }
 }
