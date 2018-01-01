@@ -90,7 +90,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2r-GA-oKk" customClass="DiscoveryModal" customModule="OctoPrint" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2r-GA-oKk" customClass="DiscoveryModal" customModule="OctoPrint" customModuleProvider="target">
                                 <rect key="frame" x="20" y="134" width="335" height="335"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -113,10 +113,13 @@
                         <viewLayoutGuide key="safeArea" id="FCG-Sw-Ndc"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="discoveryModal" destination="S2r-GA-oKk" id="A3E-bs-6zd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtY-VH-Xlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="-671"/>
+            <point key="canvasLocation" x="-298.39999999999998" y="-671.51424287856082"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

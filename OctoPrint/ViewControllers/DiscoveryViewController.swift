@@ -90,5 +90,4 @@ extension DiscoveryViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(serviceSetupVC, animated: true)
         }
     }
-
 }
