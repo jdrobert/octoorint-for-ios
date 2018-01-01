@@ -41,6 +41,7 @@
 		6612A9F21F940A7E002D009A /* OPConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F01F940A7E002D009A /* OPConnectionOptions.swift */; };
 		6612A9F41F940BA0002D009A /* OPPrinterProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */; };
 		6612A9F51F940BA0002D009A /* OPPrinterProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */; };
+		665413B71FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
@@ -197,6 +198,7 @@
 		6612A9ED1F940A17002D009A /* OPCurrentConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPCurrentConnection.swift; sourceTree = "<group>"; };
 		6612A9F01F940A7E002D009A /* OPConnectionOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPConnectionOptions.swift; sourceTree = "<group>"; };
 		6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPPrinterProfiles.swift; sourceTree = "<group>"; };
+		665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupFormTableViewCell.swift; sourceTree = "<group>"; };
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66717FFF1F939D22007587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667180011F939D22007587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 			children = (
 				6699EDAA1FDF3F1800207D1D /* DiscoveryModal.swift */,
 				66044F951FFAC02E00729547 /* DiscoveryModalTableViewCell.swift */,
+				665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -967,6 +970,7 @@
 				667180021F939D22007587C8 /* ViewController.swift in Sources */,
 				667180001F939D22007587C8 /* AppDelegate.swift in Sources */,
 				6699EDA71FDF3E0B00207D1D /* DiscoveryViewController.swift in Sources */,
+				665413B71FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
