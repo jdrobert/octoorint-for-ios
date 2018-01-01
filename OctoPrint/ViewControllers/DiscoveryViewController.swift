@@ -15,7 +15,7 @@ class DiscoveryViewController: UIViewController {
     private let client = DiscoveryClient()
     private let octoPrintType = "_octoprint._tcp"
     private let octoPrintCellIdentifier = "octoPrintCell"
-    private let discoveryDuration: TimeInterval = 10
+    private let discoveryDuration: TimeInterval = 3
     private let viewModel = DiscoveryViewModel()
 
     private var discoveredServices = [NetService]()
@@ -23,6 +23,7 @@ class DiscoveryViewController: UIViewController {
     override func viewDidLoad() {
         discoveryModal.set(delegate: self, dataSource: self)
         title = NSLocalizedString(Constants.Localization.discoveryVCTitle, comment: "")
+        navigationController?.navigationBar.tintColor = UIColor.white
         startDiscovery()
     }
 
@@ -69,11 +70,13 @@ extension DiscoveryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let service = discoveredServices[indexPath.row]
 
-        let dequedCell = tableView.dequeueReusableCell(withIdentifier: octoPrintCellIdentifier)
-        let cell = dequedCell ?? UITableViewCell(style: .subtitle, reuseIdentifier: octoPrintCellIdentifier)
+        let dequedCell = tableView.dequeueReusableCell(
+            withIdentifier: octoPrintCellIdentifier) as? DiscoveryModalTableViewCell
+        let cell = dequedCell ?? DiscoveryModalTableViewCell(reuseIdentifier: octoPrintCellIdentifier)
 
-        cell.textLabel?.text = service.name
-        cell.detailTextLabel?.text = viewModel.format(hostName: service.hostName)
+        cell.titleLabel.text = service.name
+        cell.detailLabel.text = viewModel.format(hostName: service.hostName)
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }
@@ -81,7 +84,11 @@ extension DiscoveryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let service = discoveredServices[indexPath.row]
-        print(service)
+        if let serviceSetupVC = storyboard?.instantiateViewController(
+            withIdentifier: "sb_service_setup") as? ServiceSetupViewController {
+            serviceSetupVC.service = service
+            navigationController?.pushViewController(serviceSetupVC, animated: true)
+        }
     }
 
 }

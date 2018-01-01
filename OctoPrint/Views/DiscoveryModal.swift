@@ -13,6 +13,8 @@ class DiscoveryModal: UIView {
     private let tableView: UITableView = {
        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 53
         return tableView
     }()
 
