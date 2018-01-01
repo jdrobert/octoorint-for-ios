@@ -31,7 +31,7 @@ class InterfaceController: WKInterfaceController {
 
     @objc private func getPrinterState() {
 
-        NetworkManager.shared.getVersionNumber(success: { [weak self] (version) in
+        NetworkHelper.shared.getVersionNumber(success: { [weak self] (version) in
             self?.presentAlert(withTitle: "Success", message: "", preferredStyle: .alert,
                                actions: [WKAlertAction(title: "OK", style: .default, handler: {})])
 

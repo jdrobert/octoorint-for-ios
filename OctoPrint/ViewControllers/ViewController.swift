@@ -11,8 +11,6 @@ import CommonCodePhone
 
 class ViewController: UIViewController {
 
-    private let dc = DiscoveryClient()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,19 +19,12 @@ class ViewController: UIViewController {
 
         //WatchSessionManager.shared.setupManager()
 
-        dc.startDiscovery(with: "_octoprint._tcp") { services in
-            for service in services {
-                if let hostname = service.hostName {
-                    print(hostname)
-                }
+        NetworkHelper.shared.getJobProgress(success: { (progress) in
+            print(progress)
+        }, failure: {
 
-                print(service.name)
-            }
-        }
+        })
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
-            self?.dc.stopDiscovery()
-        }
     }
 
     override func didReceiveMemoryWarning() {

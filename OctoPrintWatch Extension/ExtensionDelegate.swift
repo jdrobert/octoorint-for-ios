@@ -34,7 +34,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
                 let statusStore = JobStatusStore()
 
-                NetworkManager.shared.getJobProgress(success: { [weak self] (status) in
+                NetworkHelper.shared.getJobProgress(success: { [weak self] (status) in
                     print(status)
                     statusStore.jobStatus = status
                     statusStore.hasError = false

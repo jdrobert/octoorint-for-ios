@@ -11,6 +11,14 @@
 		461A2187F6BBA10CE1B4B5E3 /* Pods_OctoPrintWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B9DE2931166285F52FF4D6 /* Pods_OctoPrintWatch_Extension.framework */; };
 		558427680BB43660F4F98EC7 /* Pods_OctoPrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21687BE4AA74EE46D3586B7 /* Pods_OctoPrint.framework */; };
 		5FAC8354DF889789A61DCA87 /* Pods_CommonCodePhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36A26618289844F07F0BE7 /* Pods_CommonCodePhone.framework */; };
+		66044F961FFAC02E00729547 /* DiscoveryModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66044F951FFAC02E00729547 /* DiscoveryModalTableViewCell.swift */; };
+		6609236D1FE77DB100AD8B2F /* ServiceSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6609236C1FE77DB100AD8B2F /* ServiceSetupViewController.swift */; };
+		660923701FF5680600AD8B2F /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6609236F1FF5680600AD8B2F /* NetworkProtocol.swift */; };
+		660923711FF5680600AD8B2F /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6609236F1FF5680600AD8B2F /* NetworkProtocol.swift */; };
+		660923731FF56C4E00AD8B2F /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660923721FF56C4E00AD8B2F /* MockNetworkManager.swift */; };
+		660923741FF56C4E00AD8B2F /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660923721FF56C4E00AD8B2F /* MockNetworkManager.swift */; };
+		660923761FF56DF700AD8B2F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660923751FF56DF700AD8B2F /* NetworkHelper.swift */; };
+		660923771FF56DF700AD8B2F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660923751FF56DF700AD8B2F /* NetworkHelper.swift */; };
 		6612A9D41F93B31B002D009A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D31F93B31B002D009A /* NetworkManager.swift */; };
 		6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D31F93B31B002D009A /* NetworkManager.swift */; };
 		6612A9D91F93E7E8002D009A /* OPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9D81F93E7E8002D009A /* OPVersion.swift */; };
@@ -173,6 +181,11 @@
 /* Begin PBXFileReference section */
 		04B9DE2931166285F52FF4D6 /* Pods_OctoPrintWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OctoPrintWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F86D595D9B1ED9A86C3A1D /* Pods-OctoPrint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoPrint.release.xcconfig"; path = "Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint.release.xcconfig"; sourceTree = "<group>"; };
+		66044F951FFAC02E00729547 /* DiscoveryModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryModalTableViewCell.swift; sourceTree = "<group>"; };
+		6609236C1FE77DB100AD8B2F /* ServiceSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupViewController.swift; sourceTree = "<group>"; };
+		6609236F1FF5680600AD8B2F /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		660923721FF56C4E00AD8B2F /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		660923751FF56DF700AD8B2F /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		6612A9D31F93B31B002D009A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6612A9D81F93E7E8002D009A /* OPVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPVersion.swift; sourceTree = "<group>"; };
 		6612A9DB1F93EDAD002D009A /* OPJobStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPJobStatus.swift; sourceTree = "<group>"; };
@@ -311,6 +324,14 @@
 				DC7CA4EA5ECC8EF35C5F89EE /* Pods_CommonCodeWatch.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6609236E1FF5673D00AD8B2F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				660923721FF56C4E00AD8B2F /* MockNetworkManager.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		6612A9D71F93E7B2002D009A /* Models */ = {
@@ -452,6 +473,7 @@
 			children = (
 				667180011F939D22007587C8 /* ViewController.swift */,
 				6699EDA61FDF3E0B00207D1D /* DiscoveryViewController.swift */,
+				6609236C1FE77DB100AD8B2F /* ServiceSetupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -460,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				6699EDAA1FDF3F1800207D1D /* DiscoveryModal.swift */,
+				66044F951FFAC02E00729547 /* DiscoveryModalTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -492,8 +515,11 @@
 		66D6D6CE1F9EC73300567493 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6609236E1FF5673D00AD8B2F /* Mocks */,
 				6612A9D31F93B31B002D009A /* NetworkManager.swift */,
 				66D6D6CF1F9EC78600567493 /* DiscoveryClient.swift */,
+				6609236F1FF5680600AD8B2F /* NetworkProtocol.swift */,
+				660923751FF56DF700AD8B2F /* NetworkHelper.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -774,7 +800,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		718640D3FD5381FD683E58C0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -933,9 +959,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6609236D1FE77DB100AD8B2F /* ServiceSetupViewController.swift in Sources */,
 				6699EDAB1FDF3F1800207D1D /* DiscoveryModal.swift in Sources */,
 				6699EDB11FDF4D7800207D1D /* DiscoveryViewModel.swift in Sources */,
 				66782EB61F9D22A300C20C13 /* WatchSessionManager.swift in Sources */,
+				66044F961FFAC02E00729547 /* DiscoveryModalTableViewCell.swift in Sources */,
 				667180021F939D22007587C8 /* ViewController.swift in Sources */,
 				667180001F939D22007587C8 /* AppDelegate.swift in Sources */,
 				6699EDA71FDF3E0B00207D1D /* DiscoveryViewController.swift in Sources */,
@@ -953,6 +981,7 @@
 				66782E9D1F9BA33300C20C13 /* OPPrinterState.swift in Sources */,
 				66D28E471F956E8B006473A2 /* JobStatusStore.swift in Sources */,
 				66782EB11F9BA72E00C20C13 /* PrinterConnectionInfoStore.swift in Sources */,
+				660923701FF5680600AD8B2F /* NetworkProtocol.swift in Sources */,
 				66D6D6D01F9EC78600567493 /* DiscoveryClient.swift in Sources */,
 				6612A9F41F940BA0002D009A /* OPPrinterProfiles.swift in Sources */,
 				6612A9DC1F93EDAD002D009A /* OPJobStatus.swift in Sources */,
@@ -962,7 +991,9 @@
 				6612A9D41F93B31B002D009A /* NetworkManager.swift in Sources */,
 				66782EA61F9BA40300C20C13 /* OPStateFlags.swift in Sources */,
 				66782EA91F9BA46300C20C13 /* OPTemperature.swift in Sources */,
+				660923761FF56DF700AD8B2F /* NetworkHelper.swift in Sources */,
 				6612A9D91F93E7E8002D009A /* OPVersion.swift in Sources */,
+				660923731FF56C4E00AD8B2F /* MockNetworkManager.swift in Sources */,
 				6612A9EB1F940968002D009A /* OPConnectionInformation.swift in Sources */,
 				6612A9E21F93F09A002D009A /* OPFilament.swift in Sources */,
 				6612A9EE1F940A17002D009A /* OPCurrentConnection.swift in Sources */,
@@ -983,6 +1014,7 @@
 				66D28E481F956E8B006473A2 /* JobStatusStore.swift in Sources */,
 				66782EB21F9BA72E00C20C13 /* PrinterConnectionInfoStore.swift in Sources */,
 				6612A9F51F940BA0002D009A /* OPPrinterProfiles.swift in Sources */,
+				660923711FF5680600AD8B2F /* NetworkProtocol.swift in Sources */,
 				6612A9DD1F93EDAD002D009A /* OPJobStatus.swift in Sources */,
 				66782EA11F9BA3A200C20C13 /* OPSDState.swift in Sources */,
 				66782EAD1F9BA4AC00C20C13 /* OPTemperatureTool.swift in Sources */,
@@ -990,7 +1022,9 @@
 				6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */,
 				66782EA71F9BA40300C20C13 /* OPStateFlags.swift in Sources */,
 				66782EAA1F9BA46300C20C13 /* OPTemperature.swift in Sources */,
+				660923771FF56DF700AD8B2F /* NetworkHelper.swift in Sources */,
 				6612A9DA1F93E7E8002D009A /* OPVersion.swift in Sources */,
+				660923741FF56C4E00AD8B2F /* MockNetworkManager.swift in Sources */,
 				6612A9EC1F940968002D009A /* OPConnectionInformation.swift in Sources */,
 				6612A9E31F93F09A002D009A /* OPFilament.swift in Sources */,
 				6612A9EF1F940A17002D009A /* OPCurrentConnection.swift in Sources */,

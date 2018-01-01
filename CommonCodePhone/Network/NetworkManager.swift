@@ -9,8 +9,11 @@
 import Foundation
 import Alamofire
 
-public class NetworkManager {
-    public static let shared = NetworkManager()
+public class NetworkManager: NetworkProtocol {
+    public static let shared: NetworkProtocol = {
+       return NetworkManager()
+    }()
+
     private let sessionManager: SessionManager
     private lazy var baseURL: String = {
         return String(format:"%@/api",self.connectionInfo.ipAddress ?? "")
