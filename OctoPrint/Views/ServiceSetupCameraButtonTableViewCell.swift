@@ -21,7 +21,6 @@ class ServiceSetupCameraButtonTableViewCell: UITableViewCell {
     let textField: UITextField = {
         let view = UITextField()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "772B1B4E41FC41AD8962698BE5D6925D"
         view.font = UIFont.systemFont(ofSize: 12)
         view.textColor = UIColor.darkGray
         view.textAlignment = .right
@@ -61,7 +60,8 @@ class ServiceSetupCameraButtonTableViewCell: UITableViewCell {
         ]
 
         NSLayoutConstraint.activate(
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleLabel]-[textField]-[textFieldButton(50)]-|",
+            NSLayoutConstraint.constraints(withVisualFormat:
+                "H:|-[titleLabel]-[textField]-[textFieldButton(50)]-|",
                                            options: [], metrics: nil, views: views))
         NSLayoutConstraint.activate(
             NSLayoutConstraint.constraints(withVisualFormat: "V:|-19-[textField]-19-|",
