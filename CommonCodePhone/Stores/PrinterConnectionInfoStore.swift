@@ -11,6 +11,7 @@ import Foundation
 public class PrinterConnectionInfoStore {
     private let ipAddressKey = "ipAddress"
     private let apiKeyKey = "apiKey"
+    private let nameKey = "name"
 
     public init() {
 
@@ -19,6 +20,7 @@ public class PrinterConnectionInfoStore {
     public init(data: NSData) {
         let decoder = JSONDecoder()
         if let connectionInfo = try? decoder.decode(PrinterConnectionInfo.self, from: data as Data) {
+            name = connectionInfo.name
             ipAddress = connectionInfo.ipAddress
             apiKey = connectionInfo.apiKey
         }
@@ -42,13 +44,28 @@ public class PrinterConnectionInfoStore {
         }
     }
 
+    public var name: String? {
+        get {
+            return UserDefaults.standard.string(forKey: nameKey)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: nameKey)
+        }
+    }
+
     public func getCachedValues() -> NSData? {
-        let info = PrinterConnectionInfo(ipAddress: ipAddress ?? "", apiKey: apiKey ?? "")
+        let info = PrinterConnectionInfo(name: name ?? "", ipAddress: ipAddress ?? "", apiKey: apiKey ?? "")
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(info) as NSData {
             return encoded
         }
 
         return nil
+    }
+
+    public func reset() {
+        ipAddress = nil
+        apiKey = nil
+        name = nil
     }
 }
