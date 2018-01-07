@@ -91,10 +91,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2r-GA-oKk" customClass="DiscoveryModal" customModule="OctoPrint" customModuleProvider="target">
-                                <rect key="frame" x="20" y="134" width="335" height="335"/>
+                                <rect key="frame" x="20" y="200.5" width="335" height="202"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="S2r-GA-oKk" secondAttribute="height" multiplier="1:1" id="977-UL-u9H"/>
+                                    <constraint firstAttribute="height" constant="202" id="KFB-Xn-Len"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -107,7 +107,6 @@
                         <constraints>
                             <constraint firstItem="S2r-GA-oKk" firstAttribute="leading" secondItem="FlW-Xn-g5y" secondAttribute="leading" constant="20" id="IUE-VX-Tx3"/>
                             <constraint firstItem="S2r-GA-oKk" firstAttribute="centerY" secondItem="FlW-Xn-g5y" secondAttribute="centerY" id="La3-30-ovq"/>
-                            <constraint firstItem="S2r-GA-oKk" firstAttribute="width" secondItem="S2r-GA-oKk" secondAttribute="height" multiplier="1:1" id="M6R-Pt-LIz"/>
                             <constraint firstItem="FCG-Sw-Ndc" firstAttribute="trailing" secondItem="S2r-GA-oKk" secondAttribute="trailing" constant="20" id="aiR-eE-qrR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FCG-Sw-Ndc"/>

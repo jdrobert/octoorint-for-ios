@@ -1,14 +1,15 @@
 //
-//  ServiceSetupFormTableViewCell.swift
+//  ServiceSetupCameraButtonTableViewCell.swift
 //  OctoPrint
 //
-//  Created by Jeremy Roberts on 1/1/18.
+//  Created by Jeremy Roberts on 1/5/18.
 //  Copyright © 2018 Quiver Apps. All rights reserved.
 //
 
 import UIKit
 
-class ServiceSetupFormTableViewCell: UITableViewCell {
+class ServiceSetupCameraButtonTableViewCell: UITableViewCell {
+
     let titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -20,19 +21,24 @@ class ServiceSetupFormTableViewCell: UITableViewCell {
     let textField: UITextField = {
         let view = UITextField()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "772B1B4E41FC41AD8962698BE5D6925D"
         view.font = UIFont.systemFont(ofSize: 12)
         view.textColor = UIColor.darkGray
         view.textAlignment = .right
         return view
     }()
 
-    init(title:String, value:String?, reuseIdentifier:String?) {
+    let textFieldButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named:"qr_scan"), for: .normal)
+        button.clipsToBounds = true
+        return button
+    }()
+
+    init(title:String, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-
         titleLabel.text = title
-        textField.text = value
-        textField.placeholder = title
-
         setupViews()
         setupConstraints()
     }
@@ -44,22 +50,29 @@ class ServiceSetupFormTableViewCell: UITableViewCell {
     private func setupViews() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
+        contentView.addSubview(textFieldButton)
     }
 
     private func setupConstraints() {
         let views = [
             "titleLabel":titleLabel,
-            "textField":textField
+            "textField":textField,
+            "textFieldButton":textFieldButton
         ]
 
         NSLayoutConstraint.activate(
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleLabel]-[textField]-|",
-                                           options: [], metrics: nil, views: views))
-        NSLayoutConstraint.activate(
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-19-[titleLabel]-19-|",
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleLabel]-[textField]-[textFieldButton(50)]-|",
                                            options: [], metrics: nil, views: views))
         NSLayoutConstraint.activate(
             NSLayoutConstraint.constraints(withVisualFormat: "V:|-19-[textField]-19-|",
+                                           options: [], metrics: nil, views: views))
+
+        NSLayoutConstraint.activate(
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|-19-[titleLabel]-19-|",
+                                           options: [], metrics: nil, views: views))
+
+        NSLayoutConstraint.activate(
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|[textFieldButton]|",
                                            options: [], metrics: nil, views: views))
 
         NSLayoutConstraint.activate(

@@ -13,6 +13,7 @@ class ServiceSetupViewController: UIViewController {
     var service: NetService?
     private let viewModel = DiscoveryViewModel()
     private let formCellIdentifier = "formCell"
+    private let apiKeyCellIdentifier = "apiKeyCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,7 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
             return defaultFormCell(tableView, title: "Address",
                                    value: viewModel.format(hostName: service?.hostName))
         case 2:
-            return apiKeyFormCell()
+            return apiKeyFormCell(tableView)
         default:
             return UITableViewCell()
         }
@@ -62,8 +63,11 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
 
-    private func apiKeyFormCell() -> UITableViewCell {
-        return UITableViewCell()
+    private func apiKeyFormCell(_ tableView: UITableView) -> UITableViewCell {
+        let dequedCell = tableView.dequeueReusableCell(
+            withIdentifier: formCellIdentifier) as? ServiceSetupCameraButtonTableViewCell
+        let cell = dequedCell ?? ServiceSetupCameraButtonTableViewCell(title:"API Key", reuseIdentifier: apiKeyCellIdentifier)
+        return cell
     }
 
     private func setupSubmitSection() -> UITableViewCell {
