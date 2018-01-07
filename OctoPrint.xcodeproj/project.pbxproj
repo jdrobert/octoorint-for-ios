@@ -82,6 +82,7 @@
 		66782EB81F9D256B00C20C13 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66782EB71F9D256B00C20C13 /* WatchSessionManager.swift */; };
 		66782EBB1F9E90BC00C20C13 /* PrinterConnectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66782EBA1F9E90BC00C20C13 /* PrinterConnectionInfo.swift */; };
 		66782EBC1F9E90BC00C20C13 /* PrinterConnectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66782EBA1F9E90BC00C20C13 /* PrinterConnectionInfo.swift */; };
+		669930172002AF140081B17F /* AppLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669930162002AF140081B17F /* AppLoadViewController.swift */; };
 		6699EDA71FDF3E0B00207D1D /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699EDA61FDF3E0B00207D1D /* DiscoveryViewController.swift */; };
 		6699EDAB1FDF3F1800207D1D /* DiscoveryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699EDAA1FDF3F1800207D1D /* DiscoveryModal.swift */; };
 		6699EDB11FDF4D7800207D1D /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699EDB01FDF4D7800207D1D /* DiscoveryViewModel.swift */; };
@@ -241,6 +242,7 @@
 		66782EB51F9D22A300C20C13 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		66782EB71F9D256B00C20C13 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		66782EBA1F9E90BC00C20C13 /* PrinterConnectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterConnectionInfo.swift; sourceTree = "<group>"; };
+		669930162002AF140081B17F /* AppLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadViewController.swift; sourceTree = "<group>"; };
 		6699EDA61FDF3E0B00207D1D /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		6699EDAA1FDF3F1800207D1D /* DiscoveryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryModal.swift; sourceTree = "<group>"; };
 		6699EDB01FDF4D7800207D1D /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				667180011F939D22007587C8 /* ViewController.swift */,
 				6699EDA61FDF3E0B00207D1D /* DiscoveryViewController.swift */,
 				6609236C1FE77DB100AD8B2F /* ServiceSetupViewController.swift */,
+				669930162002AF140081B17F /* AppLoadViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -970,6 +973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6609236D1FE77DB100AD8B2F /* ServiceSetupViewController.swift in Sources */,
+				669930172002AF140081B17F /* AppLoadViewController.swift in Sources */,
 				6699EDAB1FDF3F1800207D1D /* DiscoveryModal.swift in Sources */,
 				6699EDB11FDF4D7800207D1D /* DiscoveryViewModel.swift in Sources */,
 				66782EB61F9D22A300C20C13 /* WatchSessionManager.swift in Sources */,
