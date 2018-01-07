@@ -41,6 +41,8 @@
 		6612A9F21F940A7E002D009A /* OPConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F01F940A7E002D009A /* OPConnectionOptions.swift */; };
 		6612A9F41F940BA0002D009A /* OPPrinterProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */; };
 		6612A9F51F940BA0002D009A /* OPPrinterProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */; };
+		66433F4920000AB60082E9FD /* ServiceSetupCameraButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66433F4820000AB60082E9FD /* ServiceSetupCameraButtonTableViewCell.swift */; };
+		66433F4B20019C460082E9FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66433F4A20019C460082E9FD /* Images.xcassets */; };
 		665413B71FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
@@ -198,6 +200,8 @@
 		6612A9ED1F940A17002D009A /* OPCurrentConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPCurrentConnection.swift; sourceTree = "<group>"; };
 		6612A9F01F940A7E002D009A /* OPConnectionOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPConnectionOptions.swift; sourceTree = "<group>"; };
 		6612A9F31F940BA0002D009A /* OPPrinterProfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPPrinterProfiles.swift; sourceTree = "<group>"; };
+		66433F4820000AB60082E9FD /* ServiceSetupCameraButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupCameraButtonTableViewCell.swift; sourceTree = "<group>"; };
+		66433F4A20019C460082E9FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupFormTableViewCell.swift; sourceTree = "<group>"; };
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66717FFF1F939D22007587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -397,10 +401,8 @@
 				66782EAE1F9BA6DE00C20C13 /* OctoPrint.entitlements */,
 				6671800B1F939D22007587C8 /* Info.plist */,
 				66717FFF1F939D22007587C8 /* AppDelegate.swift */,
-				667180061F939D22007587C8 /* Assets.xcassets */,
 				667180081F939D22007587C8 /* LaunchScreen.storyboard */,
 				667180031F939D22007587C8 /* Main.storyboard */,
-				6699EDB21FDF52AC00207D1D /* Colors.xcassets */,
 			);
 			path = OctoPrint;
 			sourceTree = "<group>";
@@ -486,6 +488,7 @@
 				6699EDAA1FDF3F1800207D1D /* DiscoveryModal.swift */,
 				66044F951FFAC02E00729547 /* DiscoveryModalTableViewCell.swift */,
 				665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */,
+				66433F4820000AB60082E9FD /* ServiceSetupCameraButtonTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -501,7 +504,10 @@
 		6699EDB41FDF54DC00207D1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6699EDB21FDF52AC00207D1D /* Colors.xcassets */,
+				667180061F939D22007587C8 /* Assets.xcassets */,
 				6699EDBE1FDF591F00207D1D /* Localizable.strings */,
+				66433F4A20019C460082E9FD /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -734,6 +740,7 @@
 				6699EDBF1FDF595900207D1D /* Localizable.strings in Resources */,
 				6671800A1F939D22007587C8 /* LaunchScreen.storyboard in Resources */,
 				6699EDB31FDF52AC00207D1D /* Colors.xcassets in Resources */,
+				66433F4B20019C460082E9FD /* Images.xcassets in Resources */,
 				667180071F939D22007587C8 /* Assets.xcassets in Resources */,
 				667180051F939D22007587C8 /* Main.storyboard in Resources */,
 			);
@@ -970,6 +977,7 @@
 				667180021F939D22007587C8 /* ViewController.swift in Sources */,
 				667180001F939D22007587C8 /* AppDelegate.swift in Sources */,
 				6699EDA71FDF3E0B00207D1D /* DiscoveryViewController.swift in Sources */,
+				66433F4920000AB60082E9FD /* ServiceSetupCameraButtonTableViewCell.swift in Sources */,
 				665413B71FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
