@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CommonCodePhone
 
 class ServiceSetupViewController: UIViewController {
     @IBOutlet weak var discoveryModal: DiscoveryModal!
@@ -21,7 +22,7 @@ class ServiceSetupViewController: UIViewController {
     }()
 
     private var nameTextField: UITextField?
-    private var hostNameTextField: UITextField?
+    private var ipAddressTextField: UITextField?
     private var apiKeyTextField: UITextField?
 
     override func viewDidLoad() {
@@ -36,6 +37,8 @@ class ServiceSetupViewController: UIViewController {
             requestCameraPermission(with: { [weak self] success in
                 if success {
                     self?.launchCamera()
+                } else {
+                    self?.showErrorAlert(with: "Unable to launch camera")
                 }
             })
         }
@@ -86,6 +89,72 @@ class ServiceSetupViewController: UIViewController {
         }
     }
 
+    private func saveServiceAction() {
+        if isFormValid() {
+            validateServerSettings(completion: { [weak self] success in
+                if success {
+                    self?.loadHomeScreen()
+                } else {
+                    self?.showErrorAlert(with: "Unable to connect. Please check address and API key")
+                }
+            })
+        }
+    }
+
+    private func loadHomeScreen() {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardIDs.homeVCNav) {
+          UIApplication.shared.keyWindow?.rootViewController = vc
+        }
+    }
+
+    private func isFormValid() -> Bool {
+        if !isTextFieldValid(nameTextField) {
+            showErrorAlert(with: "Name cannot be empty")
+            return false
+        }
+
+        if !isTextFieldValid(ipAddressTextField) {
+            showErrorAlert(with: "Address cannot be empty")
+            return false
+        }
+
+        if !isTextFieldValid(apiKeyTextField) {
+            showErrorAlert(with: "API key cannot be empty")
+            return false
+        }
+
+        return true
+    }
+
+    private func validateServerSettings(completion: @escaping (Bool) -> Void) {
+        let info = PrinterConnectionInfoStore()
+        info.name = nameTextField?.text
+        info.ipAddress = ipAddressTextField?.text
+        info.apiKey = apiKeyTextField?.text
+
+        NetworkManager.reset()
+        NetworkHelper.shared.getVersionNumber(success: { _ in
+            completion(true)
+            }, failure: {
+            info.reset()
+            completion(false)
+        })
+    }
+
+    private func isTextFieldValid(_ textField: UITextField?) -> Bool {
+        if let text = textField?.text {
+            return !text.isEmpty
+        }
+
+        return false
+    }
+
+    private func showErrorAlert(with message:String?) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource {
@@ -115,7 +184,7 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
         case 1:
             let cell = defaultFormCell(tableView, title: "Address",
                                    value: viewModel.format(hostName: service?.hostName))
-            hostNameTextField = cell.textField
+            ipAddressTextField = cell.textField
             return cell
         case 2:
             let cell = apiKeyFormCell(tableView)
@@ -133,6 +202,7 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
             withIdentifier: formCellIdentifier) as? ServiceSetupFormTableViewCell
         let cell = dequedCell ?? ServiceSetupFormTableViewCell(title: title, value: value,
                                                                reuseIdentifier: formCellIdentifier)
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -142,6 +212,7 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
         let cell = dequedCell ?? ServiceSetupCameraButtonTableViewCell(title:"API Key",
                                                                        reuseIdentifier: apiKeyCellIdentifier)
         cell.textFieldButton.addTarget(self, action: #selector(launchCameraAction), for: .touchUpInside)
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -155,7 +226,9 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        if indexPath.section == 1 {
+            saveServiceAction()
+        }
     }
 }
 

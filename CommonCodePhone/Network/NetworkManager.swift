@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 public class NetworkManager: NetworkProtocol {
-    public static let shared: NetworkProtocol = {
+    public static var shared: NetworkProtocol = {
        return NetworkManager()
     }()
 
@@ -20,6 +20,10 @@ public class NetworkManager: NetworkProtocol {
     }()
 
     private let connectionInfo = PrinterConnectionInfoStore()
+
+    public static func reset() {
+        shared = NetworkManager()
+    }
 
     init() {
         let config = URLSessionConfiguration.default
