@@ -24,8 +24,9 @@ public struct Constants {
     public struct Localization {
         public static let discoveryVCTitle = "discovery_vc_title"
     }
-    
+
     public struct StoryboardIDs {
         public static let homeVCNav = "sb_home_vc_navcontroller"
+        public static let discoveryVCNav = "sb_discovery_vc_navcontroller"
     }
 }
