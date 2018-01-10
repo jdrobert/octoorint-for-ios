@@ -13,14 +13,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = PrinterConnectionInfoStore().name
 
         //NotificationCenter.default.addObserver(self, selector: #selector(syncWithWatch),
             //name: NSNotification.Name(rawValue: Constants.Notifications.watchSessionReady), object: nil)
 
         //WatchSessionManager.shared.setupManager()
 
-        NetworkHelper.shared.getJobProgress(success: { (progress) in
-            print(progress)
+        NetworkHelper.shared.getConnectionInformation(success: { connectionInfo in
+            print(connectionInfo)
         }, failure: {
 
         })

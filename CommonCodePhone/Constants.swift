@@ -28,5 +28,6 @@ public struct Constants {
     public struct StoryboardIDs {
         public static let homeVCNav = "sb_home_vc_navcontroller"
         public static let discoveryVCNav = "sb_discovery_vc_navcontroller"
+        public static let mainTabController = "sb_main_tab_controller"
     }
 }

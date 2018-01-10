@@ -18,7 +18,7 @@ class AppLoadViewController: UIViewController {
             info.ipAddress != nil,
             info.apiKey != nil,
             let vc = storyboard?.instantiateViewController(
-                withIdentifier: Constants.StoryboardIDs.homeVCNav) {
+                withIdentifier: Constants.StoryboardIDs.mainTabController) {
             UIApplication.shared.keyWindow?.rootViewController = vc
         } else if let vc = storyboard?.instantiateViewController(
             withIdentifier: Constants.StoryboardIDs.discoveryVCNav) {
