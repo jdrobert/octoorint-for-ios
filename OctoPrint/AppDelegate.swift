@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        //NetworkHelper.helperInstance.setNetworkManager(networkManager: MockNetworkManager.shared)
+        NetworkHelper.helperInstance.setNetworkManager(networkManager: MockNetworkManager.shared)
         return true
     }
 
