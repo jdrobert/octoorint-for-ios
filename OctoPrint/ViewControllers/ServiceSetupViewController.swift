@@ -102,7 +102,8 @@ class ServiceSetupViewController: UIViewController {
     }
 
     private func loadHomeScreen() {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardIDs.mainTabController) {
+        if let vc = storyboard?.instantiateViewController(
+            withIdentifier: Constants.StoryboardIDs.mainTabController) {
           UIApplication.shared.keyWindow?.rootViewController = vc
         }
     }
