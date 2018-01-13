@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak private var connectionInfoPortLabel: UILabel!
     @IBOutlet weak private var connectionInfoBaudrateLabel: UILabel!
     @IBOutlet weak private var connectionInfoProfileLabel: UILabel!
+    @IBOutlet weak private var scrollView: UIScrollView!
+    
     private let connectionInfoExpandedHeight: CGFloat = 182.0
     private let connectionInfoCollapsedHeight: CGFloat = 0.0
     private let connectionInfo = PrinterConnectionInfoStore()
@@ -26,6 +28,7 @@ class ViewController: UIViewController {
     private var selectedPort = ""
     private var selectedBaudrate = ""
     private var selectedProfile = ""
+    private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,31 +39,34 @@ class ViewController: UIViewController {
 
         //WatchSessionManager.shared.setupManager()
 
+        scrollView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(loadConnection), for: .valueChanged)
         itemPicker = ItemPicker(containerView: UIApplication.shared.keyWindow?.rootViewController?.view)
 
         loadConnection()
     }
 
-    private func loadConnection() {
+    @objc private func loadConnection() {
         connectionInfoTitleIndicator.backgroundColor = UIColor(named: Constants.Colors.harvestGold) ?? .purple
         connectionInfoTitleLabel.text = "Checking connection"
 
         NetworkHelper.shared.getConnectionInformation(success: { [weak self] connection in
             self?.currentConnectionInfo = connection
             self?.connectionInfoTitleLabel.text = connection.current.state
+            self?.refreshControl.endRefreshing()
 
             if connection.current.state != "Connected" {
                 self?.connectionInfoTitleIndicator.backgroundColor =
                     UIColor(named: Constants.Colors.burgundy) ?? .purple
                 self?.setupDisconnectedLabels(connection)
-                self?.toggleConnectionInfo()
+                self?.openConnectionInfo()
             } else {
                 self?.connectionInfoTitleIndicator.backgroundColor =
                     UIColor(named: Constants.Colors.darkGreen) ?? .purple
                 self?.setupConnectedLabels(connection)
             }
-            }, failure: {
-
+            }, failure: { [weak self] in
+                self?.refreshControl.endRefreshing()
         })
     }
 
@@ -115,6 +121,12 @@ class ViewController: UIViewController {
         }
     }
 
+    private func openConnectionInfo() {
+        UIView.animate(withDuration: 0.25) { [unowned self] in
+            self.connectionInfoHeightConstraint.constant = self.connectionInfoExpandedHeight
+            self.view.layoutIfNeeded()
+        }
+    }
     private func toggleConnectionInfo() {
         UIView.animate(withDuration: 0.25) { [unowned self] in
             if self.connectionInfoHeightConstraint.constant == 0 {
