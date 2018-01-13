@@ -313,7 +313,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3v-2T-nBv" userLabel="Connection Info Header">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disconnected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO6-7F-QGt">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checking Connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO6-7F-QGt">
                                                         <rect key="frame" x="12" y="14" width="323" height="18"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -321,7 +321,7 @@
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CT-1i-cdi" userLabel="Indicator Dot">
                                                         <rect key="frame" x="347" y="18" width="16" height="16"/>
-                                                        <color key="backgroundColor" name="Burgundy"/>
+                                                        <color key="backgroundColor" name="Harvest Gold"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="16" id="A72-wi-yNm"/>
                                                             <constraint firstAttribute="height" constant="16" id="UIV-WB-3jF"/>
@@ -360,7 +360,7 @@
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LG6-2M-hWo" userLabel="Connection Info">
                                                 <rect key="frame" x="0.0" y="46" width="375" height="182"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4VD-YO-L56">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4VD-YO-L56" userLabel="Port View">
                                                         <rect key="frame" x="12" y="0.0" width="351" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Port" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTS-4P-YqO">
@@ -377,6 +377,7 @@
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstItem="mgx-iT-7GS" firstAttribute="top" secondItem="4VD-YO-L56" secondAttribute="top" id="IU0-7U-DAh"/>
                                                             <constraint firstItem="sTS-4P-YqO" firstAttribute="top" secondItem="4VD-YO-L56" secondAttribute="top" id="KfA-Im-NPM"/>
@@ -387,6 +388,9 @@
                                                             <constraint firstItem="mgx-iT-7GS" firstAttribute="width" secondItem="sTS-4P-YqO" secondAttribute="width" id="zIU-w7-faI"/>
                                                             <constraint firstItem="mgx-iT-7GS" firstAttribute="leading" secondItem="sTS-4P-YqO" secondAttribute="trailing" id="zym-t5-hl8"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="vM1-gW-KxE" appends="YES" id="tvo-ZD-z7j"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jmy-p8-CNi" userLabel="Spacer">
                                                         <rect key="frame" x="0.0" y="45" width="375" height="0.5"/>
@@ -395,7 +399,7 @@
                                                             <constraint firstAttribute="height" priority="750" constant="0.5" id="t95-gE-3LP"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZE-Bq-zkr">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZE-Bq-zkr" userLabel="Baudrate View">
                                                         <rect key="frame" x="12" y="45.5" width="351" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baudrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVM-1P-hUr">
@@ -412,6 +416,7 @@
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="aVM-1P-hUr" secondAttribute="bottom" id="0Er-ga-q5n"/>
                                                             <constraint firstItem="tCJ-8c-5Gu" firstAttribute="leading" secondItem="aVM-1P-hUr" secondAttribute="trailing" id="6bo-Vp-wK2"/>
@@ -422,6 +427,9 @@
                                                             <constraint firstAttribute="bottom" secondItem="tCJ-8c-5Gu" secondAttribute="bottom" id="haG-LD-Z2O"/>
                                                             <constraint firstAttribute="trailing" secondItem="tCJ-8c-5Gu" secondAttribute="trailing" id="i5R-wN-41F"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="GX4-iU-yxA" appends="YES" id="5ap-8W-98U"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-NW-4Ho" userLabel="Spacer">
                                                         <rect key="frame" x="0.0" y="90.5" width="375" height="0.5"/>
@@ -430,7 +438,7 @@
                                                             <constraint firstAttribute="height" priority="750" constant="0.5" id="MhP-p7-zHY"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDU-Gl-4vE">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDU-Gl-4vE" userLabel="Profile View">
                                                         <rect key="frame" x="12" y="91" width="351" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SK8-5J-usM">
@@ -447,6 +455,7 @@
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstItem="xQj-Jm-3R9" firstAttribute="leading" secondItem="SK8-5J-usM" secondAttribute="trailing" id="10k-Qb-XZJ"/>
                                                             <constraint firstAttribute="bottom" secondItem="xQj-Jm-3R9" secondAttribute="bottom" id="6Vx-7k-vM1"/>
@@ -457,6 +466,9 @@
                                                             <constraint firstItem="xQj-Jm-3R9" firstAttribute="top" secondItem="iDU-Gl-4vE" secondAttribute="top" id="gMO-RY-b1L"/>
                                                             <constraint firstItem="xQj-Jm-3R9" firstAttribute="width" secondItem="SK8-5J-usM" secondAttribute="width" id="kDc-tp-ZyQ"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="ReS-7o-d5n" appends="YES" id="oyc-c8-Vbl"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-2i-dOg" userLabel="Spacer">
                                                         <rect key="frame" x="0.0" y="136" width="375" height="0.5"/>
@@ -552,13 +564,33 @@
                     </view>
                     <navigationItem key="navigationItem" id="h9M-Uw-t8Z"/>
                     <connections>
+                        <outlet property="connectionInfoBaudrateLabel" destination="tCJ-8c-5Gu" id="h96-YP-OyJ"/>
                         <outlet property="connectionInfoHeightConstraint" destination="y0F-Zc-8cd" id="tvj-w8-IjD"/>
+                        <outlet property="connectionInfoPortLabel" destination="mgx-iT-7GS" id="dfy-73-I2Q"/>
+                        <outlet property="connectionInfoProfileLabel" destination="xQj-Jm-3R9" id="b6c-3Q-6f6"/>
+                        <outlet property="connectionInfoTitleIndicator" destination="1CT-1i-cdi" id="5HS-Z4-2jf"/>
+                        <outlet property="connectionInfoTitleLabel" destination="vO6-7F-QGt" id="lQq-zS-NSb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="UOY-EU-bwp">
                     <connections>
                         <action selector="connectionInfoHeaderTapActionWithTapGesture:" destination="BYZ-38-t0r" id="Z2x-wH-5Hp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="vM1-gW-KxE">
+                    <connections>
+                        <action selector="showPortPicker" destination="BYZ-38-t0r" id="dNg-X7-7Nd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="GX4-iU-yxA">
+                    <connections>
+                        <action selector="showBaudratePicker" destination="BYZ-38-t0r" id="GQr-Oe-JR2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ReS-7o-d5n">
+                    <connections>
+                        <action selector="showProfilePicker" destination="BYZ-38-t0r" id="xCK-1Z-SZI"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -580,11 +612,11 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Burgundy">
-            <color red="0.51764705882352946" green="0.0" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Dark Green">
             <color red="0.0" green="0.35294117647058826" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Harvest Gold">
+            <color red="0.89803921568627454" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Licorice">
             <color red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
