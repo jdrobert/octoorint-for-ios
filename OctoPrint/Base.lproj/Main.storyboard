@@ -570,6 +570,7 @@
                         <outlet property="connectionInfoProfileLabel" destination="xQj-Jm-3R9" id="b6c-3Q-6f6"/>
                         <outlet property="connectionInfoTitleIndicator" destination="1CT-1i-cdi" id="5HS-Z4-2jf"/>
                         <outlet property="connectionInfoTitleLabel" destination="vO6-7F-QGt" id="lQq-zS-NSb"/>
+                        <outlet property="scrollView" destination="Jkq-9h-n8q" id="UuW-iR-jlD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
