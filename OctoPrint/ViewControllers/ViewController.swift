@@ -12,42 +12,110 @@ import CommonCodePhone
 class ViewController: UIViewController {
 
     @IBOutlet weak private var connectionInfoHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var connectionInfoTitleIndicator: UIView!
+    @IBOutlet weak private var connectionInfoTitleLabel: UILabel!
+    @IBOutlet weak private var connectionInfoPortLabel: UILabel!
+    @IBOutlet weak private var connectionInfoBaudrateLabel: UILabel!
+    @IBOutlet weak private var connectionInfoProfileLabel: UILabel!
     private let connectionInfoExpandedHeight: CGFloat = 182.0
     private let connectionInfoCollapsedHeight: CGFloat = 0.0
     private let connectionInfo = PrinterConnectionInfoStore()
+    private let dashboardViewModel = DashboardViewModel()
+    private var currentConnectionInfo: OPConnectionInformation?
     private var itemPicker: ItemPicker?
+    private var selectedPort = ""
+    private var selectedBaudrate = ""
+    private var selectedProfile = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = connectionInfo.name
-        //connectionInfoPickerHeightConstraint.constant = connectionInfoPickerCollapsedHeight
-
+        connectionInfoHeightConstraint.constant = connectionInfoCollapsedHeight
         //NotificationCenter.default.addObserver(self, selector: #selector(syncWithWatch),
             //name: NSNotification.Name(rawValue: Constants.Notifications.watchSessionReady), object: nil)
 
         //WatchSessionManager.shared.setupManager()
 
-        NetworkHelper.shared.getConnectionInformation(success: { connectionInfo in
-            print(connectionInfo)
-        }, failure: {
+        itemPicker = ItemPicker(containerView: UIApplication.shared.keyWindow?.rootViewController?.view)
+
+        loadConnection()
+    }
+
+    private func loadConnection() {
+        connectionInfoTitleIndicator.backgroundColor = UIColor(named: Constants.Colors.harvestGold) ?? .purple
+        connectionInfoTitleLabel.text = "Checking connection"
+
+        NetworkHelper.shared.getConnectionInformation(success: { [weak self] connection in
+            self?.currentConnectionInfo = connection
+            self?.connectionInfoTitleLabel.text = connection.current.state
+
+            if connection.current.state != "Connected" {
+                self?.connectionInfoTitleIndicator.backgroundColor =
+                    UIColor(named: Constants.Colors.burgundy) ?? .purple
+                self?.setupDisconnectedLabels(connection)
+                self?.toggleConnectionInfo()
+            } else {
+                self?.connectionInfoTitleIndicator.backgroundColor =
+                    UIColor(named: Constants.Colors.darkGreen) ?? .purple
+                self?.setupConnectedLabels(connection)
+            }
+            }, failure: {
 
         })
-
-        itemPicker = ItemPicker(containerView: UIApplication.shared.keyWindow?.rootViewController?.view)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    private func setupConnectedLabels(_ connection: OPConnectionInformation) {
 
     }
 
-    private func showPicker(for items:[String]) {
-        itemPicker?.showPicker(for: items, done: { selectedItem in
-            print(selectedItem)
+    private func setupDisconnectedLabels(_ connection: OPConnectionInformation) {
+        selectedPort = dashboardViewModel.getPortName(connection)
+        connectionInfoPortLabel.text = selectedPort
+
+        selectedBaudrate = String(connection.options.baudratePreference)
+        connectionInfoBaudrateLabel.text = selectedBaudrate
+
+        selectedProfile = dashboardViewModel.getProfileName(
+            for: connection.options.printerProfilePreference, profiles: connection.options.printerProfiles)
+        connectionInfoProfileLabel.text = selectedProfile
+    }
+
+    private func showPicker(for items:[String], selected: String, done: @escaping (String) -> Void) {
+        itemPicker?.showPicker(for: items, selected: selected,  done: { selectedItem in
+            done(selectedItem)
         }, cancel: nil)
     }
 
-    @IBAction func connectionInfoHeaderTapAction(tapGesture: UITapGestureRecognizer) {
+    @IBAction private func showPortPicker() {
+        if let connection = currentConnectionInfo, !connection.options.ports.isEmpty {
+            showPicker(for: connection.options.ports, selected: selectedPort, done: { [weak self] selectedItem in
+                self?.selectedPort = selectedItem
+                self?.connectionInfoPortLabel.text = selectedItem
+            })
+        }
+    }
+
+    @IBAction private func showBaudratePicker() {
+        if let connection = currentConnectionInfo, !connection.options.baudrates.isEmpty {
+            showPicker(for: dashboardViewModel.getBaudratesArray(connection.options.baudrates),
+                       selected: selectedBaudrate ,done: { [weak self] selectedItem in
+                self?.selectedBaudrate = selectedItem
+                self?.connectionInfoBaudrateLabel.text = selectedItem
+            })
+        }
+    }
+
+    @IBAction private func showProfilePicker() {
+        if let connection = currentConnectionInfo, !connection.options.printerProfiles.isEmpty {
+            showPicker(for: dashboardViewModel.getProfileNames(connection.options.printerProfiles),
+                       selected: selectedProfile, done: { [weak self] selectedItem in
+                self?.selectedProfile = selectedItem
+                self?.connectionInfoProfileLabel.text = selectedItem
+            })
+        }
+    }
+
+    private func toggleConnectionInfo() {
         UIView.animate(withDuration: 0.25) { [unowned self] in
             if self.connectionInfoHeightConstraint.constant == 0 {
                 self.connectionInfoHeightConstraint.constant = self.connectionInfoExpandedHeight
@@ -57,6 +125,9 @@ class ViewController: UIViewController {
 
             self.view.layoutIfNeeded()
         }
+    }
+    @IBAction private func connectionInfoHeaderTapAction(tapGesture: UITapGestureRecognizer) {
+        toggleConnectionInfo()
     }
 
     @objc private func syncWithWatch() {

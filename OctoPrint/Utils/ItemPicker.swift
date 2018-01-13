@@ -36,14 +36,16 @@ class ItemPicker: NSObject {
         setupConstraints()
     }
 
-    func showPicker(for items:[String], done: ((String) -> Void)?, cancel: (() -> Void)?) {
+    func showPicker(for items:[String], selected:String, done: ((String) -> Void)?, cancel: (() -> Void)?) {
         self.items = items
         doneAction = done
         cancelAction = cancel
-        selectedItem = items[0]
+
+        let selectedIndex = items.index(of: selected) ?? 0
+        selectedItem = items[selectedIndex]
 
         itemPickerView.pickerView.reloadAllComponents()
-        itemPickerView.pickerView.selectRow(0, inComponent: 0, animated: false)
+        itemPickerView.pickerView.selectRow(selectedIndex, inComponent: 0, animated: false)
 
         NSLayoutConstraint.deactivate(pickerViewCollapsedConstraint)
         NSLayoutConstraint.activate(pickerViewExpandedConstraint)
