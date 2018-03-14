@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak private var connectionInfoBaudrateLabel: UILabel!
     @IBOutlet weak private var connectionInfoProfileLabel: UILabel!
     @IBOutlet weak private var scrollView: UIScrollView!
-    
+
     private let connectionInfoExpandedHeight: CGFloat = 182.0
     private let connectionInfoCollapsedHeight: CGFloat = 0.0
     private let connectionInfo = PrinterConnectionInfoStore()
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             self?.connectionInfoTitleLabel.text = connection.current.state
             self?.refreshControl.endRefreshing()
 
-            if connection.current.state != "Connected" {
+            if PrinterStateHelper.isDisconnected(connection.current.state) {
                 self?.connectionInfoTitleIndicator.backgroundColor =
                     UIColor(named: Constants.Colors.burgundy) ?? .purple
                 self?.setupDisconnectedLabels(connection)
@@ -94,7 +94,8 @@ class ViewController: UIViewController {
 
     @IBAction private func showPortPicker() {
         if let connection = currentConnectionInfo, !connection.options.ports.isEmpty {
-            showPicker(for: connection.options.ports, selected: selectedPort, done: { [weak self] selectedItem in
+            showPicker(for: connection.options.ports, selected: selectedPort,
+                       done: { [weak self] selectedItem in
                 self?.selectedPort = selectedItem
                 self?.connectionInfoPortLabel.text = selectedItem
             })

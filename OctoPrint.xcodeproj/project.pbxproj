@@ -46,6 +46,10 @@
 		66433F4920000AB60082E9FD /* ServiceSetupCameraButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66433F4820000AB60082E9FD /* ServiceSetupCameraButtonTableViewCell.swift */; };
 		66433F4B20019C460082E9FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66433F4A20019C460082E9FD /* Images.xcassets */; };
 		665413B71FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */; };
+		6667C0DF20596E700068805C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0DE20596E700068805C /* Enums.swift */; };
+		6667C0E020596E700068805C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0DE20596E700068805C /* Enums.swift */; };
+		6667C0E3205970E70068805C /* PrinterStateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0E2205970E70068805C /* PrinterStateHelper.swift */; };
+		6667C0E4205970E70068805C /* PrinterStateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0E2205970E70068805C /* PrinterStateHelper.swift */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
@@ -209,6 +213,8 @@
 		66433F4820000AB60082E9FD /* ServiceSetupCameraButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupCameraButtonTableViewCell.swift; sourceTree = "<group>"; };
 		66433F4A20019C460082E9FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupFormTableViewCell.swift; sourceTree = "<group>"; };
+		6667C0DE20596E700068805C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		6667C0E2205970E70068805C /* PrinterStateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterStateHelper.swift; sourceTree = "<group>"; };
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66717FFF1F939D22007587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667180011F939D22007587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -380,6 +386,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		6667C0E1205970D30068805C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6667C0E2205970E70068805C /* PrinterStateHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		66717FF31F939D21007587C8 = {
 			isa = PBXGroup;
 			children = (
@@ -427,12 +441,14 @@
 		667180341F93A60C007587C8 /* CommonCodePhone */ = {
 			isa = PBXGroup;
 			children = (
+				6667C0E1205970D30068805C /* Utils */,
 				66D6D6CE1F9EC73300567493 /* Network */,
 				6612A9D71F93E7B2002D009A /* Models */,
 				66D28E451F956E71006473A2 /* Stores */,
 				667180351F93A60C007587C8 /* CommonCodePhone.h */,
 				667180361F93A60C007587C8 /* Info.plist */,
 				66D6D6CB1F9E992500567493 /* Constants.swift */,
+				6667C0DE20596E700068805C /* Enums.swift */,
 			);
 			path = CommonCodePhone;
 			sourceTree = "<group>";
@@ -830,7 +846,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which ${PODS_ROOT}/SwiftLint/swiftlint >/dev/null; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		718640D3FD5381FD683E58C0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1013,6 +1029,7 @@
 				6612A9E51F93F10D002D009A /* OPFile.swift in Sources */,
 				6612A9F11F940A7E002D009A /* OPConnectionOptions.swift in Sources */,
 				6612A9DF1F93EEAE002D009A /* OPJobInformation.swift in Sources */,
+				6667C0E3205970E70068805C /* PrinterStateHelper.swift in Sources */,
 				66782EA31F9BA3CA00C20C13 /* OPState.swift in Sources */,
 				66782E9D1F9BA33300C20C13 /* OPPrinterState.swift in Sources */,
 				66D28E471F956E8B006473A2 /* JobStatusStore.swift in Sources */,
@@ -1030,6 +1047,7 @@
 				660923761FF56DF700AD8B2F /* NetworkHelper.swift in Sources */,
 				6612A9D91F93E7E8002D009A /* OPVersion.swift in Sources */,
 				660923731FF56C4E00AD8B2F /* MockNetworkManager.swift in Sources */,
+				6667C0DF20596E700068805C /* Enums.swift in Sources */,
 				6612A9EB1F940968002D009A /* OPConnectionInformation.swift in Sources */,
 				6612A9E21F93F09A002D009A /* OPFilament.swift in Sources */,
 				6612A9EE1F940A17002D009A /* OPCurrentConnection.swift in Sources */,
@@ -1044,6 +1062,7 @@
 			files = (
 				6612A9E61F93F10D002D009A /* OPFile.swift in Sources */,
 				6612A9F21F940A7E002D009A /* OPConnectionOptions.swift in Sources */,
+				6667C0E020596E700068805C /* Enums.swift in Sources */,
 				6612A9E01F93EEAE002D009A /* OPJobInformation.swift in Sources */,
 				66782EA41F9BA3CA00C20C13 /* OPState.swift in Sources */,
 				66782E9E1F9BA33300C20C13 /* OPPrinterState.swift in Sources */,
@@ -1058,6 +1077,7 @@
 				6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */,
 				66782EA71F9BA40300C20C13 /* OPStateFlags.swift in Sources */,
 				66782EAA1F9BA46300C20C13 /* OPTemperature.swift in Sources */,
+				6667C0E4205970E70068805C /* PrinterStateHelper.swift in Sources */,
 				660923771FF56DF700AD8B2F /* NetworkHelper.swift in Sources */,
 				6612A9DA1F93E7E8002D009A /* OPVersion.swift in Sources */,
 				660923741FF56C4E00AD8B2F /* MockNetworkManager.swift in Sources */,
