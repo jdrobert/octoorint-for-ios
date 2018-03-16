@@ -364,17 +364,24 @@
                                                         <rect key="frame" x="12" y="0.0" width="351" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Port" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTS-4P-YqO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="45"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="166" height="45"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgx-iT-7GS">
-                                                                <rect key="frame" x="175.5" y="0.0" width="175.5" height="45"/>
+                                                                <rect key="frame" x="166" y="0.0" width="166" height="45"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editRow" translatesAutoresizingMaskIntoConstraints="NO" id="7Rv-W3-W0G">
+                                                                <rect key="frame" x="339" y="16.5" width="12" height="12"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="12" id="CUX-5j-hhR"/>
+                                                                    <constraint firstAttribute="width" constant="12" id="x4U-AK-DYR"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <gestureRecognizers/>
@@ -383,8 +390,10 @@
                                                             <constraint firstItem="sTS-4P-YqO" firstAttribute="top" secondItem="4VD-YO-L56" secondAttribute="top" id="KfA-Im-NPM"/>
                                                             <constraint firstItem="sTS-4P-YqO" firstAttribute="leading" secondItem="4VD-YO-L56" secondAttribute="leading" id="OtC-Rd-HSB"/>
                                                             <constraint firstAttribute="bottom" secondItem="mgx-iT-7GS" secondAttribute="bottom" id="Rc3-ic-JdR"/>
-                                                            <constraint firstAttribute="trailing" secondItem="mgx-iT-7GS" secondAttribute="trailing" id="ios-2P-Qfj"/>
+                                                            <constraint firstItem="7Rv-W3-W0G" firstAttribute="centerY" secondItem="4VD-YO-L56" secondAttribute="centerY" id="e8M-70-g8b"/>
                                                             <constraint firstAttribute="bottom" secondItem="sTS-4P-YqO" secondAttribute="bottom" id="sfl-m3-rBG"/>
+                                                            <constraint firstItem="7Rv-W3-W0G" firstAttribute="leading" secondItem="mgx-iT-7GS" secondAttribute="trailing" constant="7" id="uKg-9w-Sse"/>
+                                                            <constraint firstAttribute="trailing" secondItem="7Rv-W3-W0G" secondAttribute="trailing" id="wfY-jD-fw6"/>
                                                             <constraint firstItem="mgx-iT-7GS" firstAttribute="width" secondItem="sTS-4P-YqO" secondAttribute="width" id="zIU-w7-faI"/>
                                                             <constraint firstItem="mgx-iT-7GS" firstAttribute="leading" secondItem="sTS-4P-YqO" secondAttribute="trailing" id="zym-t5-hl8"/>
                                                         </constraints>
@@ -403,29 +412,38 @@
                                                         <rect key="frame" x="12" y="45.5" width="351" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baudrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVM-1P-hUr">
-                                                                <rect key="frame" x="0.0" y="-0.5" width="175.5" height="45"/>
+                                                                <rect key="frame" x="0.0" y="-0.5" width="166" height="45"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-8c-5Gu">
-                                                                <rect key="frame" x="175.5" y="0.0" width="175.5" height="45"/>
+                                                                <rect key="frame" x="166" y="0.0" width="166" height="45"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editRow" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-d8-krH">
+                                                                <rect key="frame" x="339" y="16.5" width="12" height="12"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="12" id="SjS-cz-Sc9"/>
+                                                                    <constraint firstAttribute="height" constant="12" id="rbT-IG-tR4"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="aVM-1P-hUr" secondAttribute="bottom" id="0Er-ga-q5n"/>
                                                             <constraint firstItem="tCJ-8c-5Gu" firstAttribute="leading" secondItem="aVM-1P-hUr" secondAttribute="trailing" id="6bo-Vp-wK2"/>
+                                                            <constraint firstAttribute="trailing" secondItem="J0K-d8-krH" secondAttribute="trailing" id="8Oh-zR-pF7"/>
                                                             <constraint firstItem="tCJ-8c-5Gu" firstAttribute="top" secondItem="PZE-Bq-zkr" secondAttribute="top" id="BuC-7i-b1r"/>
                                                             <constraint firstItem="aVM-1P-hUr" firstAttribute="leading" secondItem="PZE-Bq-zkr" secondAttribute="leading" id="Hut-FR-05k"/>
                                                             <constraint firstItem="tCJ-8c-5Gu" firstAttribute="width" secondItem="aVM-1P-hUr" secondAttribute="width" id="LEJ-ot-IEP"/>
                                                             <constraint firstItem="aVM-1P-hUr" firstAttribute="top" secondItem="PZE-Bq-zkr" secondAttribute="top" id="Sxh-eU-fIl"/>
+                                                            <constraint firstItem="J0K-d8-krH" firstAttribute="centerY" secondItem="PZE-Bq-zkr" secondAttribute="centerY" id="ZdX-ae-RR8"/>
                                                             <constraint firstAttribute="bottom" secondItem="tCJ-8c-5Gu" secondAttribute="bottom" id="haG-LD-Z2O"/>
-                                                            <constraint firstAttribute="trailing" secondItem="tCJ-8c-5Gu" secondAttribute="trailing" id="i5R-wN-41F"/>
+                                                            <constraint firstItem="J0K-d8-krH" firstAttribute="leading" secondItem="tCJ-8c-5Gu" secondAttribute="trailing" constant="7" id="hts-QX-6cx"/>
                                                         </constraints>
                                                         <connections>
                                                             <outletCollection property="gestureRecognizers" destination="GX4-iU-yxA" appends="YES" id="5ap-8W-98U"/>
@@ -442,17 +460,24 @@
                                                         <rect key="frame" x="12" y="91" width="351" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SK8-5J-usM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="45"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="166" height="45"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQj-Jm-3R9">
-                                                                <rect key="frame" x="175.5" y="0.0" width="175.5" height="45"/>
+                                                                <rect key="frame" x="166" y="0.0" width="166" height="45"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editRow" translatesAutoresizingMaskIntoConstraints="NO" id="gOW-Ew-167">
+                                                                <rect key="frame" x="339" y="16" width="12" height="12"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="12" id="Emw-gB-wa7"/>
+                                                                    <constraint firstAttribute="width" constant="12" id="zYY-5z-44X"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <gestureRecognizers/>
@@ -462,9 +487,11 @@
                                                             <constraint firstItem="SK8-5J-usM" firstAttribute="leading" secondItem="iDU-Gl-4vE" secondAttribute="leading" id="8s0-2j-qmn"/>
                                                             <constraint firstAttribute="bottom" secondItem="SK8-5J-usM" secondAttribute="bottom" id="Mv9-I4-qHE"/>
                                                             <constraint firstItem="SK8-5J-usM" firstAttribute="top" secondItem="iDU-Gl-4vE" secondAttribute="top" id="T3u-NY-66k"/>
-                                                            <constraint firstAttribute="trailing" secondItem="xQj-Jm-3R9" secondAttribute="trailing" id="VmT-xY-p9N"/>
+                                                            <constraint firstAttribute="trailing" secondItem="gOW-Ew-167" secondAttribute="trailing" id="TOZ-5k-NZN"/>
                                                             <constraint firstItem="xQj-Jm-3R9" firstAttribute="top" secondItem="iDU-Gl-4vE" secondAttribute="top" id="gMO-RY-b1L"/>
+                                                            <constraint firstItem="gOW-Ew-167" firstAttribute="centerY" secondItem="iDU-Gl-4vE" secondAttribute="centerY" id="k3O-1K-XeB"/>
                                                             <constraint firstItem="xQj-Jm-3R9" firstAttribute="width" secondItem="SK8-5J-usM" secondAttribute="width" id="kDc-tp-ZyQ"/>
+                                                            <constraint firstItem="gOW-Ew-167" firstAttribute="leading" secondItem="xQj-Jm-3R9" secondAttribute="trailing" constant="7" id="mRW-ac-eTx"/>
                                                         </constraints>
                                                         <connections>
                                                             <outletCollection property="gestureRecognizers" destination="ReS-7o-d5n" appends="YES" id="oyc-c8-Vbl"/>
@@ -613,6 +640,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="editRow" width="12" height="12"/>
         <namedColor name="Dark Green">
             <color red="0.0" green="0.35294117647058826" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

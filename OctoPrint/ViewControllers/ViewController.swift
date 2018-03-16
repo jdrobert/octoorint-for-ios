@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func loadConnection() {
-        connectionInfoTitleIndicator.backgroundColor = UIColor(named: Constants.Colors.harvestGold) ?? .purple
+        connectionInfoTitleIndicator.backgroundColor = UIColor.named(Constants.Colors.harvestGold)
         connectionInfoTitleLabel.text = "Checking connection"
 
         NetworkHelper.shared.getConnectionInformation(success: { [weak self] connection in
@@ -57,12 +57,12 @@ class ViewController: UIViewController {
 
             if PrinterStateHelper.isDisconnected(connection.current.state) {
                 self?.connectionInfoTitleIndicator.backgroundColor =
-                    UIColor(named: Constants.Colors.burgundy) ?? .purple
+                    UIColor.named(Constants.Colors.burgundy)
                 self?.setupDisconnectedLabels(connection)
                 self?.openConnectionInfo()
             } else {
                 self?.connectionInfoTitleIndicator.backgroundColor =
-                    UIColor(named: Constants.Colors.darkGreen) ?? .purple
+                    UIColor.named(Constants.Colors.darkGreen)
                 self?.setupConnectedLabels(connection)
             }
             }, failure: { [weak self] in

@@ -50,6 +50,7 @@
 		6667C0E020596E700068805C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0DE20596E700068805C /* Enums.swift */; };
 		6667C0E3205970E70068805C /* PrinterStateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0E2205970E70068805C /* PrinterStateHelper.swift */; };
 		6667C0E4205970E70068805C /* PrinterStateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0E2205970E70068805C /* PrinterStateHelper.swift */; };
+		6667C0E6205B3A8C0068805C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0E5205B3A8C0068805C /* UIColorExtension.swift */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
@@ -215,6 +216,7 @@
 		665413B61FFAE5E000E02F3A /* ServiceSetupFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupFormTableViewCell.swift; sourceTree = "<group>"; };
 		6667C0DE20596E700068805C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		6667C0E2205970E70068805C /* PrinterStateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterStateHelper.swift; sourceTree = "<group>"; };
+		6667C0E5205B3A8C0068805C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66717FFF1F939D22007587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667180011F939D22007587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				662DF01C20093D9B00F41F3A /* ItemPicker.swift */,
+				6667C0E5205B3A8C0068805C /* UIColorExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1007,6 +1010,7 @@
 			files = (
 				6609236D1FE77DB100AD8B2F /* ServiceSetupViewController.swift in Sources */,
 				669930172002AF140081B17F /* AppLoadViewController.swift in Sources */,
+				6667C0E6205B3A8C0068805C /* UIColorExtension.swift in Sources */,
 				6699EDAB1FDF3F1800207D1D /* DiscoveryModal.swift in Sources */,
 				6699EDB11FDF4D7800207D1D /* DiscoveryViewModel.swift in Sources */,
 				66782EB61F9D22A300C20C13 /* WatchSessionManager.swift in Sources */,

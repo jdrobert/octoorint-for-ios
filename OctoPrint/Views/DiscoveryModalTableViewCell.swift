@@ -14,7 +14,7 @@ class DiscoveryModalTableViewCell: UITableViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 4
-        view.backgroundColor = UIColor(named: Constants.Colors.harvestGold)
+        view.backgroundColor = UIColor.named(Constants.Colors.harvestGold)
         return view
     }()
 

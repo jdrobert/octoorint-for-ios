@@ -45,32 +45,36 @@ class ServiceSetupViewController: UIViewController {
     }
 
     private func launchCamera() {
-        if let captureDevice = AVCaptureDevice.default(for: .video) {
-            do {
-                if captureSession.inputs.isEmpty {
-                    let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
-                    captureSession.addInput(deviceInput)
+        DispatchQueue.main.async { [weak self] in
+            if let captureDevice = AVCaptureDevice.default(for: .video) {
+                do {
+                    if let inputs = self?.captureSession.inputs, inputs.isEmpty {
+                        let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
+                        self?.captureSession.addInput(deviceInput)
 
-                    let captureMetadataOutput = AVCaptureMetadataOutput()
-                    captureSession.addOutput(captureMetadataOutput)
+                        let captureMetadataOutput = AVCaptureMetadataOutput()
+                        self?.captureSession.addOutput(captureMetadataOutput)
 
-                    captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-                    if captureMetadataOutput.availableMetadataObjectTypes.contains(.qr) {
-                        captureMetadataOutput.metadataObjectTypes = [.qr]
+                        captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                        if captureMetadataOutput.availableMetadataObjectTypes.contains(.qr) {
+                            captureMetadataOutput.metadataObjectTypes = [.qr]
+                        }
                     }
-                }
 
-                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-                videoPreviewLayer?.videoGravity = .resizeAspectFill
-                videoPreviewLayer?.frame = navigationController?.view.bounds ?? .zero
+                    if let capSession = self?.captureSession {
+                        self?.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: capSession)
+                        self?.videoPreviewLayer?.videoGravity = .resizeAspectFill
+                        self?.videoPreviewLayer?.frame = self?.navigationController?.view.bounds ?? .zero
 
-                if let previewLayer = videoPreviewLayer {
-                    navigationController?.view.layer.addSublayer(previewLayer)
-                }
+                        if let previewLayer = self?.videoPreviewLayer {
+                            self?.navigationController?.view.layer.addSublayer(previewLayer)
+                        }
 
-                captureSession.startRunning()
+                        capSession.startRunning()
+                    }
 
-            } catch {}
+                } catch {}
+            }
         }
     }
 
