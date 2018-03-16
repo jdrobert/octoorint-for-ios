@@ -33,6 +33,15 @@ public class MockNetworkManager: NetworkProtocol {
 
     }
 
+    public func connect(to port:String, baudrate:Int,
+                        printerProfile:String, completion: @escaping () -> Void) {
+
+    }
+
+    public func disconnect(completion: @escaping () -> Void) {
+
+    }
+
 }
 
 // MARK: Job progress

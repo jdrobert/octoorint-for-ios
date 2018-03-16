@@ -516,6 +516,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLx-fq-vKe">
                                                         <rect key="frame" x="12" y="136.5" width="351" height="45"/>
                                                         <state key="normal" title="Connect"/>
+                                                        <connections>
+                                                            <action selector="connectionButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="H7g-VB-HMM"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOr-KQ-xW2" userLabel="Spacer">
                                                         <rect key="frame" x="0.0" y="181.5" width="375" height="0.5"/>
@@ -600,6 +603,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="h9M-Uw-t8Z"/>
                     <connections>
+                        <outlet property="connectionButton" destination="eLx-fq-vKe" id="dAY-fM-qg9"/>
                         <outlet property="connectionInfoBaudrateView" destination="PZE-Bq-zkr" id="qg5-V2-EKE"/>
                         <outlet property="connectionInfoHeightConstraint" destination="y0F-Zc-8cd" id="tvj-w8-IjD"/>
                         <outlet property="connectionInfoPortView" destination="4VD-YO-L56" id="gib-7v-VKm"/>

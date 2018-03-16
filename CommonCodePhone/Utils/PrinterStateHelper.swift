@@ -30,7 +30,7 @@ public class PrinterStateHelper {
 
     private static func does(stateList:[PrinterState], contain printerState:String) -> Bool {
         for state in stateList {
-            if state.rawValue.contains(printerState) {
+            if printerState.range(of: state.rawValue) != nil {
                 return true
             }
         }

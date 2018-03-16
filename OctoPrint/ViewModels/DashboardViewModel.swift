@@ -19,6 +19,14 @@ class DashboardViewModel {
         return "Default"
     }
 
+    func getProfileId(for name:String, profiles:[OPPrinterProfiles]) -> String {
+        for profile in profiles where profile.name == name {
+            return profile.id
+        }
+
+        return "Default"
+    }
+
     func getBaudratesArray(_ baudrates: [Int]) -> [String] {
         var baudRatesStr = [String]()
         for baudrate in baudrates {

@@ -53,6 +53,9 @@
 		6667C0E6205B3A8C0068805C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0E5205B3A8C0068805C /* UIColorExtension.swift */; };
 		6667C0E8205BF0DA0068805C /* ConnectionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0E7205BF0DA0068805C /* ConnectionInfoView.swift */; };
 		6667C0EB205BFAD30068805C /* OPConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0EA205BFAD30068805C /* OPConnectionRequest.swift */; };
+		6667C0EC205BFD9E0068805C /* OPConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0EA205BFAD30068805C /* OPConnectionRequest.swift */; };
+		6667C0EE205C137D0068805C /* OPDisconnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0ED205C137D0068805C /* OPDisconnectionRequest.swift */; };
+		6667C0EF205C137D0068805C /* OPDisconnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6667C0ED205C137D0068805C /* OPDisconnectionRequest.swift */; };
 		667180001F939D22007587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66717FFF1F939D22007587C8 /* AppDelegate.swift */; };
 		667180021F939D22007587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667180011F939D22007587C8 /* ViewController.swift */; };
 		667180051F939D22007587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667180031F939D22007587C8 /* Main.storyboard */; };
@@ -221,6 +224,7 @@
 		6667C0E5205B3A8C0068805C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		6667C0E7205BF0DA0068805C /* ConnectionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfoView.swift; sourceTree = "<group>"; };
 		6667C0EA205BFAD30068805C /* OPConnectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPConnectionRequest.swift; sourceTree = "<group>"; };
+		6667C0ED205C137D0068805C /* OPDisconnectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPDisconnectionRequest.swift; sourceTree = "<group>"; };
 		66717FFC1F939D22007587C8 /* OctoPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66717FFF1F939D22007587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667180011F939D22007587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				6667C0EA205BFAD30068805C /* OPConnectionRequest.swift */,
+				6667C0ED205C137D0068805C /* OPDisconnectionRequest.swift */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -957,10 +962,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrintWatch Extension/Pods-OctoPrintWatch Extension-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-watchOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Wrap-watchOS/Wrap.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wrap.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -975,10 +982,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OctoPrint/Pods-OctoPrint-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Wrap-iOS/Wrap.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wrap.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1055,6 +1066,7 @@
 				66D28E471F956E8B006473A2 /* JobStatusStore.swift in Sources */,
 				66782EB11F9BA72E00C20C13 /* PrinterConnectionInfoStore.swift in Sources */,
 				660923701FF5680600AD8B2F /* NetworkProtocol.swift in Sources */,
+				6667C0EE205C137D0068805C /* OPDisconnectionRequest.swift in Sources */,
 				66D6D6D01F9EC78600567493 /* DiscoveryClient.swift in Sources */,
 				6612A9F41F940BA0002D009A /* OPPrinterProfiles.swift in Sources */,
 				6612A9DC1F93EDAD002D009A /* OPJobStatus.swift in Sources */,
@@ -1083,6 +1095,7 @@
 				6612A9E61F93F10D002D009A /* OPFile.swift in Sources */,
 				6612A9F21F940A7E002D009A /* OPConnectionOptions.swift in Sources */,
 				6667C0E020596E700068805C /* Enums.swift in Sources */,
+				6667C0EC205BFD9E0068805C /* OPConnectionRequest.swift in Sources */,
 				6612A9E01F93EEAE002D009A /* OPJobInformation.swift in Sources */,
 				66782EA41F9BA3CA00C20C13 /* OPState.swift in Sources */,
 				66782E9E1F9BA33300C20C13 /* OPPrinterState.swift in Sources */,
@@ -1094,6 +1107,7 @@
 				66782EA11F9BA3A200C20C13 /* OPSDState.swift in Sources */,
 				66782EAD1F9BA4AC00C20C13 /* OPTemperatureTool.swift in Sources */,
 				66D6D6CD1F9E992500567493 /* Constants.swift in Sources */,
+				6667C0EF205C137D0068805C /* OPDisconnectionRequest.swift in Sources */,
 				6612A9D51F93B31B002D009A /* NetworkManager.swift in Sources */,
 				66782EA71F9BA40300C20C13 /* OPStateFlags.swift in Sources */,
 				66782EAA1F9BA46300C20C13 /* OPTemperature.swift in Sources */,

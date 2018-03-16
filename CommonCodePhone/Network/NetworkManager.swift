@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import Wrap
 
 public class NetworkManager: NetworkProtocol {
     public static var shared: NetworkProtocol = {
@@ -89,6 +90,31 @@ public class NetworkManager: NetworkProtocol {
         })
     }
 
+    public func connect(to port:String, baudrate:Int, printerProfile:String,
+                        completion: @escaping () -> Void) {
+        let request = OPConnectionRequest(port: port, baudrate: baudrate, printerProfile: printerProfile)
+        let params = try? wrap(request)
+        let url = String(format:"%@/connection",baseURL)
+
+        postRequest(url: url, parameters: params, success: { _ in
+            completion()
+        }, failure: { _ in
+            completion()
+        })
+    }
+
+    public func disconnect(completion: @escaping () -> Void) {
+        let request = OPDisconnectionRequest()
+        let params = try? wrap(request)
+        let url = String(format:"%@/connection",baseURL)
+
+        postRequest(url: url, parameters: params, success: { _ in
+            completion()
+        }, failure: { _ in
+            completion()
+        })
+    }
+
     private func decodeObject<T>(from response:Data?) -> T? where T:Decodable {
         do {
             if let responseValue = response {
@@ -105,6 +131,11 @@ public class NetworkManager: NetworkProtocol {
     private func getRequest(url: String, parameters: Parameters? = nil,
                             success: @escaping (Data?) -> Void, failure: @escaping (Data?) -> Void) {
         makeRequest(url: url, method: .get, parameters: parameters, success: success, failure: failure)
+    }
+
+    private func postRequest(url: String, parameters: Parameters? = nil,
+                             success: @escaping (Data?) -> Void, failure: @escaping (Data?) -> Void) {
+        makeRequest(url: url, method: .post, parameters: parameters, success: success, failure: failure)
     }
 
     private func makeRequest(url: String, method: HTTPMethod, parameters: Parameters? = nil,

@@ -7,6 +7,7 @@ target 'CommonCodeWatch' do
 
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftLint'
+  pod 'Wrap', '3.0.0'
   
   target 'OctoPrintWatch Extension' do
       inherit! :search_paths
@@ -20,6 +21,8 @@ target 'CommonCodePhone' do
     
     pod 'Alamofire', '~> 4.5'
     pod 'SwiftLint'
+    pod 'Wrap', '3.0.0'
+    pod 'MBProgressHUD', '~> 1.1.0'
     
     target 'OctoPrint' do
         inherit! :search_paths

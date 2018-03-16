@@ -9,7 +9,7 @@ The app is early in development and pretty barebones right now. My intended feat
 - **iOS**
     - [ ] Job progress widget
     - [x] Detect and setup OctoPrint instances on the network
-    - [ ] Connect to printer
+    - [x] Connect to printer
     - [ ] Display current job progress 
     - [ ] Set hotend and bed temperatures
     - [ ] Start job

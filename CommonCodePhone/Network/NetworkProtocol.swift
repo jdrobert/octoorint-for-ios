@@ -16,4 +16,6 @@ public protocol NetworkProtocol {
                                   failure: @escaping () -> Void)
     func getVersionNumber(success: @escaping (OPVersion) -> Void, failure: @escaping () -> Void)
     func getPrinterState(success: @escaping (OPPrinterState) -> Void, failure: @escaping () -> Void)
+    func connect(to port:String, baudrate:Int, printerProfile:String, completion: @escaping () -> Void)
+    func disconnect(completion: @escaping () -> Void)
 }

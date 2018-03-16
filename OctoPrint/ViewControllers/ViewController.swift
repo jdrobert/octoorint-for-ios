@@ -8,6 +8,7 @@
 
 import UIKit
 import CommonCodePhone
+import MBProgressHUD
 
 class ViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak private var connectionInfoBaudrateView: ConnectionInfoView!
     @IBOutlet weak private var connectionInfoProfileView: ConnectionInfoView!
     @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var connectionButton: UIButton!
 
     private let connectionInfoExpandedHeight: CGFloat = 182.0
     private let connectionInfoCollapsedHeight: CGFloat = 0.0
@@ -42,13 +44,13 @@ class ViewController: UIViewController {
         scrollView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(loadConnection), for: .valueChanged)
         itemPicker = ItemPicker(containerView: UIApplication.shared.keyWindow?.rootViewController?.view)
+        connectionInfoTitleLabel.text = "Checking connection"
 
         loadConnection()
     }
 
     @objc private func loadConnection() {
         connectionInfoTitleIndicator.backgroundColor = UIColor.named(Constants.Colors.harvestGold)
-        connectionInfoTitleLabel.text = "Checking connection"
 
         NetworkHelper.shared.getConnectionInformation(success: { [weak self] connection in
             self?.currentConnectionInfo = connection
@@ -56,17 +58,38 @@ class ViewController: UIViewController {
             self?.refreshControl.endRefreshing()
             self?.toggleEditIconsIfNeeded()
 
-            if PrinterStateHelper.isDisconnected(connection.current.state) {
-                self?.connectionInfoTitleIndicator.backgroundColor = UIColor.named(Constants.Colors.burgundy)
-                self?.setupDisconnectedLabels(connection)
-                self?.openConnectionInfo()
+            let state = connection.current.state
+            if PrinterStateHelper.isDisconnected(state) {
+                self?.handleDisconnectedAction(connection)
+            } else if PrinterStateHelper.isConnecting(state) {
+                self?.handleConnectingAction(connection)
             } else {
-                self?.connectionInfoTitleIndicator.backgroundColor = UIColor.named(Constants.Colors.darkGreen)
-                self?.setupConnectedLabels(connection)
+                self?.handleConnectedAction(connection)
             }
             }, failure: { [weak self] in
                 self?.refreshControl.endRefreshing()
         })
+    }
+
+    private func handleDisconnectedAction(_ connection: OPConnectionInformation) {
+        connectionInfoTitleIndicator.backgroundColor = UIColor.named(Constants.Colors.burgundy)
+        setupConnectionInfoLabels(connection)
+        connectionButton.setTitle("Connect", for: .normal)
+        openConnectionInfo()
+    }
+
+    private func handleConnectingAction(_ connection: OPConnectionInformation) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.loadConnection()
+        }
+    }
+
+    private func handleConnectedAction(_ connection: OPConnectionInformation) {
+        connectionInfoTitleIndicator.backgroundColor = UIColor.named(Constants.Colors.darkGreen)
+        setupConnectionInfoLabels(connection)
+        hideEditIcons()
+        connectionButton.setTitle("Disconnect", for: .normal)
+        closeConnectionInfo()
     }
 
     private func toggleEditIconsIfNeeded() {
@@ -77,11 +100,13 @@ class ViewController: UIViewController {
         }
     }
 
-    private func setupConnectedLabels(_ connection: OPConnectionInformation) {
-
+    private func hideEditIcons() {
+        connectionInfoPortView.editIcon.isHidden = true
+        connectionInfoBaudrateView.editIcon.isHidden = true
+        connectionInfoProfileView.editIcon.isHidden = true
     }
 
-    private func setupDisconnectedLabels(_ connection: OPConnectionInformation) {
+    private func setupConnectionInfoLabels(_ connection: OPConnectionInformation) {
         selectedPort = dashboardViewModel.getPortName(connection)
         connectionInfoPortView.detailLabel.text = selectedPort
 
@@ -100,7 +125,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func showPortPicker() {
-        if let connection = currentConnectionInfo, !connection.options.ports.isEmpty {
+        if let connection = currentConnectionInfo,
+            !connection.options.ports.isEmpty,
+            PrinterStateHelper.isDisconnected(connection.current.state) {
+
             highlight(row: connectionInfoPortView)
             showPicker(for: connection.options.ports, selected: selectedPort,
                        done: { [weak self] selectedItem in
@@ -111,7 +139,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func showBaudratePicker() {
-        if let connection = currentConnectionInfo, !connection.options.baudrates.isEmpty {
+        if let connection = currentConnectionInfo,
+            !connection.options.baudrates.isEmpty,
+            PrinterStateHelper.isDisconnected(connection.current.state) {
+
             highlight(row: connectionInfoBaudrateView)
             showPicker(for: dashboardViewModel.getBaudratesArray(connection.options.baudrates),
                        selected: selectedBaudrate ,done: { [weak self] selectedItem in
@@ -122,13 +153,47 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func showProfilePicker() {
-        if let connection = currentConnectionInfo, !connection.options.printerProfiles.isEmpty {
+        if let connection = currentConnectionInfo,
+            !connection.options.printerProfiles.isEmpty,
+            PrinterStateHelper.isDisconnected(connection.current.state) {
+
             highlight(row: connectionInfoProfileView)
             showPicker(for: dashboardViewModel.getProfileNames(connection.options.printerProfiles),
                        selected: selectedProfile, done: { [weak self] selectedItem in
                 self?.selectedProfile = selectedItem
                 self?.connectionInfoProfileView.detailLabel.text = selectedItem
             })
+        }
+    }
+
+    @IBAction private func connectionButtonAction() {
+        if let connection = currentConnectionInfo {
+            if PrinterStateHelper.isDisconnected(connection.current.state) {
+                connectToPrinter(connection)
+            } else {
+                disconnectFromPrinter()
+            }
+        }
+    }
+
+    private func connectToPrinter(_ currentConnection: OPConnectionInformation) {
+        if let baudrate = Int(selectedBaudrate) {
+            let selectedProfileId =
+                dashboardViewModel.getProfileId(for: selectedProfile,
+                                                profiles: currentConnection.options.printerProfiles)
+
+            NetworkHelper.shared.connect(to: selectedPort,
+                                         baudrate: baudrate,
+                                         printerProfile: selectedProfileId,
+                                         completion: { [weak self]  in
+                self?.loadConnection()
+            })
+        }
+    }
+
+    private func disconnectFromPrinter() {
+        NetworkHelper.shared.disconnect { [weak self] in
+            self?.loadConnection()
         }
     }
 
@@ -148,6 +213,14 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+
+    private func closeConnectionInfo() {
+        UIView.animate(withDuration: 0.25) { [unowned self] in
+            self.connectionInfoHeightConstraint.constant = self.connectionInfoCollapsedHeight
+            self.view.layoutIfNeeded()
+        }
+    }
+
     private func toggleConnectionInfo() {
         UIView.animate(withDuration: 0.25) { [unowned self] in
             if self.connectionInfoHeightConstraint.constant == 0 {
