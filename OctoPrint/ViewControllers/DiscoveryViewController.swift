@@ -22,7 +22,7 @@ class DiscoveryViewController: UIViewController {
 
     override func viewDidLoad() {
         discoveryModal.set(delegate: self, dataSource: self)
-        title = NSLocalizedString(Constants.Localization.discoveryVCTitle, comment: "")
+        title = String.localizedString(LocalizedConstants.discoveryVCTitle)
         navigationController?.navigationBar.tintColor = UIColor.white
         startDiscovery()
     }

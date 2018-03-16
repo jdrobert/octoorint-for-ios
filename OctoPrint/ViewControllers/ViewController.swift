@@ -44,9 +44,16 @@ class ViewController: UIViewController {
         scrollView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(loadConnection), for: .valueChanged)
         itemPicker = ItemPicker(containerView: UIApplication.shared.keyWindow?.rootViewController?.view)
-        connectionInfoTitleLabel.text = "Checking connection"
-
         loadConnection()
+    }
+
+    private func localization() {
+        connectionInfoTitleLabel.text = String.localizedString(LocalizedConstants.dashboardCheckingConnection)
+        connectionInfoPortView.titleLabel.text = String.localizedString(LocalizedConstants.dashboardPortTitle)
+        connectionInfoBaudrateView.titleLabel.text =
+            String.localizedString(LocalizedConstants.dashboardBaudrateTitle)
+        connectionInfoProfileView.titleLabel.text =
+            String.localizedString(LocalizedConstants.dashboardProfileTitle)
     }
 
     @objc private func loadConnection() {
@@ -74,7 +81,7 @@ class ViewController: UIViewController {
     private func handleDisconnectedAction(_ connection: OPConnectionInformation) {
         connectionInfoTitleIndicator.backgroundColor = UIColor.named(Constants.Colors.burgundy)
         setupConnectionInfoLabels(connection)
-        connectionButton.setTitle("Connect", for: .normal)
+        connectionButton.setTitle(String.localizedString(LocalizedConstants.dashboardConnect), for: .normal)
         openConnectionInfo()
     }
 
@@ -88,7 +95,8 @@ class ViewController: UIViewController {
         connectionInfoTitleIndicator.backgroundColor = UIColor.named(Constants.Colors.darkGreen)
         setupConnectionInfoLabels(connection)
         hideEditIcons()
-        connectionButton.setTitle("Disconnect", for: .normal)
+        connectionButton.setTitle(String.localizedString(LocalizedConstants.dashboardDisconnect),
+                                  for: .normal)
         closeConnectionInfo()
     }
 

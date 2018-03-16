@@ -38,7 +38,8 @@ class ServiceSetupViewController: UIViewController {
                 if success {
                     self?.launchCamera()
                 } else {
-                    self?.showErrorAlert(with: "Unable to launch camera")
+                    self?.showErrorAlert(with:
+                        String.localizedString(LocalizedConstants.serviceSetupCameraError))
                 }
             })
         }
@@ -99,7 +100,8 @@ class ServiceSetupViewController: UIViewController {
                 if success {
                     self?.loadHomeScreen()
                 } else {
-                    self?.showErrorAlert(with: "Unable to connect. Please check address and API key")
+                    self?.showErrorAlert(with:
+                        String.localizedString(LocalizedConstants.serviceSetupConnectionError))
                 }
             })
         }
@@ -114,17 +116,17 @@ class ServiceSetupViewController: UIViewController {
 
     private func isFormValid() -> Bool {
         if !isTextFieldValid(nameTextField) {
-            showErrorAlert(with: "Name cannot be empty")
+            showErrorAlert(with: String.localizedString(LocalizedConstants.serviceSetupNameError))
             return false
         }
 
         if !isTextFieldValid(ipAddressTextField) {
-            showErrorAlert(with: "Address cannot be empty")
+            showErrorAlert(with: String.localizedString(LocalizedConstants.serviceSetupAddressError))
             return false
         }
 
         if !isTextFieldValid(apiKeyTextField) {
-            showErrorAlert(with: "API key cannot be empty")
+            showErrorAlert(with: String.localizedString(LocalizedConstants.serviceSetupApiError))
             return false
         }
 
@@ -155,8 +157,10 @@ class ServiceSetupViewController: UIViewController {
     }
 
     private func showErrorAlert(with message:String?) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: String.localizedString(LocalizedConstants.error),
+                                      message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: String.localizedString(LocalizedConstants.ok),
+                                      style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 
@@ -183,12 +187,19 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
     private func setupFormSection(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = defaultFormCell(tableView, title: "Name", value: service?.name)
+            let cell =
+                defaultFormCell(tableView,
+                                title: String.localizedString(LocalizedConstants.serviceSetupNameTitle),
+                                value: service?.name)
+
             nameTextField = cell.textField
             return cell
         case 1:
-            let cell = defaultFormCell(tableView, title: "Address",
-                                   value: viewModel.format(hostName: service?.hostName))
+            let cell =
+                defaultFormCell(tableView,
+                                title: String.localizedString(LocalizedConstants.serviceSetupAddressTitle),
+                                value: viewModel.format(hostName: service?.hostName))
+
             ipAddressTextField = cell.textField
             return cell
         case 2:
@@ -214,8 +225,11 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
     private func apiKeyFormCell(_ tableView: UITableView) -> ServiceSetupCameraButtonTableViewCell {
         let dequedCell = tableView.dequeueReusableCell(
             withIdentifier: formCellIdentifier) as? ServiceSetupCameraButtonTableViewCell
-        let cell = dequedCell ?? ServiceSetupCameraButtonTableViewCell(title:"API Key",
-                                                                       reuseIdentifier: apiKeyCellIdentifier)
+        let cell = dequedCell ??
+            ServiceSetupCameraButtonTableViewCell(
+                title:String.localizedString(LocalizedConstants.serviceSetupApiTitle),
+                reuseIdentifier: apiKeyCellIdentifier)
+
         cell.textFieldButton.addTarget(self, action: #selector(launchCameraAction), for: .touchUpInside)
         cell.selectionStyle = .none
         return cell
@@ -223,7 +237,7 @@ extension ServiceSetupViewController: UITableViewDelegate, UITableViewDataSource
 
     private func setupSubmitSection() -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "")
-        cell.textLabel?.text = "Save"
+        cell.textLabel?.text = String.localizedString(LocalizedConstants.save)
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         cell.accessoryType = .disclosureIndicator
         return cell

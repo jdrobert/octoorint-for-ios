@@ -6,4 +6,21 @@
   Copyright © 2017 Quiver Apps. All rights reserved.
 */
 
+"error" = "Error";
+"ok" = "OK";
+"save" = "Save";
+"service_setup_camera_error" = "Unable to launch camera";
+"service_setup_connection_error" = "Unable to connect. Please check address and API key";
+"service_setup_name_error" = "Name cannot be empty";
+"service_setup_address_error" = "Address cannot be empty";
+"service_setup_api_error" = "API key cannot be empty";
+"service_setup_name_title" = "Name";
+"service_setup_address_title" = "Address";
+"service_setup_api_title" = "API Key";
 "discovery_vc_title" = "Searching";
+"dashboard_port_title" = "Port";
+"dashboard_baudrate_title" = "Baudrate";
+"dashboard_profile_title" = "Profile";
+"dashboard_connect" = "Connect";
+"dashboard_disconnect" = "Disconnect";
+"dashboard_checking_connection" = "Checking connection";
