@@ -19,6 +19,7 @@ public struct Constants {
         public static let harvestGold = "Harvest Gold"
         public static let licorice = "Licorice"
         public static let oxfordBlue = "Oxford Blue"
+        public static let cellHighlightGray = "Cell Highlight Gray"
     }
 
     public struct Localization {
